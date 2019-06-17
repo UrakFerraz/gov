@@ -1,0 +1,1357 @@
+<!doctype html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>Sample document</title>
+    <link rel="canonical" href="./regular-html-version.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+
+
+    <style amp-custom>
+header{background-color:#efefef;height:100px}
+button{position:relative;border:none;background-color:#fff;cursor:pointer;box-sizing:border-box;display:flex;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:nowrap;padding:4px 10px;border-radius:5px;transition:.3s ease all}
+button:hover{background-color:#1f8a70}
+button:hover .btnText{color:#fff}
+button svg{height:30px}
+.scrollbar{margin:7px;float:left;height:97%;width:98%;background:#fff;overflow-y:scroll;position:relative;z-index:1}
+.force-overflow{min-height:100px;line-height:1.5;font-size:12px;height:450px}
+#style-3-scrollbar::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+#style-3-scrollbar::-webkit-scrollbar{width:6px;background-color:#fff}
+#style-3-scrollbar::-webkit-scrollbar-thumb{background-color:silver}
+amp-selector[role=tablist].tabs-with-flex{display:flex;flex-wrap:wrap;outline:none}
+amp-selector[role=tablist].tabs-with-flex [role=tab]{flex-grow:1;text-align:center;padding:.5rem;outline:none}
+amp-selector[role=tablist].tabs-with-flex [role=tab][selected]{outline:none;border-bottom:2px solid #8e9aaf}
+amp-selector[role=tablist].tabs-with-flex [role=tabpanel]{display:none;width:100%;order:1;padding:2rem;outline:none}
+amp-selector[role=tablist].tabs-with-flex [role=tab][selected] + [role=tabpanel]{display:block;outline:none}
+amp-selector[role=tablist].tabs-with-selector{display:flex;outline:none}
+amp-selector[role=tablist].tabs-with-selector [role=tab][selected]{outline:none;border-bottom:2px solid #8e9aaf}
+amp-selector[role=tablist].tabs-with-selector{display:flex;outline:none}
+amp-selector[role=tablist].tabs-with-selector [role=tab]{width:100%;text-align:center;padding:.5rem;outline:none}
+amp-selector.tabpanels [role=tabpanel]{display:none;padding:2rem;outline:none}
+amp-selector.tabpanels [role=tabpanel][selected]{outline:none;display:block;outline:none}
+.btnText{font-size:16px;font-weight:500;color:#415b76;margin-left:5px}
+.btnText:nth-of-type(2){font-size:16px;font-weight:500;color:#415b76;margin-left:20px}
+.container{position:relative;width:100%;max-width:1024px;display:grid;grid-template-columns:1fr;padding:20px;box-sizing:border-box;font-family:'Roboto Condensed',sans-serif;margin:0 auto}
+.statusBarWrapper{position:relative;background-color:#1e3d5a;border-radius:10px;width:100%;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between;padding:10px;box-sizing:border-box}
+.statusBarWrapper button:nth-of-type(5){background-color:#48C9B0}
+.statusBarWrapper button:nth-of-type(5) span{color:#fff;font-weight:600}
+.searchResultsWrapper{display:flex;flex-direction:column;flex-wrap:nowrap;background-color:#fff;box-shadow:0 0 100px 0 rgba(0,0,0,0.2);margin-top:20px;border-radius:10px}
+.profileImgWrapper{width:100%;height:100%;position:relative;box-sizing:border-box;display:flex;flex-direction:column;flex-wrap:nowrap;align-items:center;background-color:#1e3d5a;padding:10px;visibility:hidden}
+.profileImgMask{position:relative;display:block;overflow:hidden;width:120px;box-sizing:border-box;border-radius:5px}
+.profileImgWrapper amp-img{margin:-15px;box-sizing:border-box}
+.govProfileHeader{display:flex;flex-direction:row;flex-wrap:nowrap}
+.expiraText{position:relative;font-size:16px;color:orange;display:none}
+.govProfileHeader div{display:flex;padding:6px 7px 10px 6px;background-color:#1e3d5a;position:relative;z-index:2;border-radius:5px 20px 0 0;box-sizing:border-box}
+.govProfileHeader span{font-size:16px;margin-right:30px;color:#eee2df}
+.govProfileWrapper{display:grid;grid-template-columns:250px 1fr;border-radius:5px;box-sizing:border-box;width:98%;border:1px solid #1e3d5a;margin-bottom:15px;overflow:hidden;height:43px;background-color:#fff;z-index:10;position:relative;top:-5px}
+.desbloquearBtn{position:absolute;background-color:#1f8a70;z-index:20;transition:.3s ease all;cursor:pointer;top:7px;margin-left:6px}
+.desbloquearBtn span{color:#fff;font-size:15px;margin-left:5px;font-weight:600}
+.desbloquearBtn svg{height:20px}
+.desbloquearBtn:hover{background-color:green}
+.blurEffect{filter:blur(5px)}
+.profileImgNomeGov{font-size:16px;color:#eee2df;margin-top:10px;box-sizing:border-box;padding:10px;position:relative}
+amp-selector div svg{box-sizing:border-box;height:25px}
+amp-selector [id*=tab]{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:center}
+amp-selector [id*=tab] span{font-size:16px;margin-left:3px;color:#415b76}
+.tabContent{display:flex;flex-direction:column;flex-wrap:wrap;justify-content:center;align-items:center;width:100%}
+.tabContent span{display:block;line-height:1.9;flex-grow:1}
+#tabpanel3 .tabContent{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center}
+#tabpanel3 .tabContent button:hover{background-color:#eee2df}
+.socialMediaBtn{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;margin:10px}
+.socialMediaBtn svg{height:50px}
+.socialMediaBtn span{font-size:12px!important;line-height:1.1!important}
+.enderecoContainer{display:flex;flex-direction:column;justify-content:center;width:100%;border:1px solid #eee2df;border-radius:5px;padding:5px;margin-bottom:10px}
+.enderecoTitleWrapper{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;padding:10px;border-bottom:1px solid #eee2df}
+.enderecoData{display:flex;flex-direction:column;flex-wrap:wrap;margin-top:5px}
+.conexoesWrapper{display:grid;grid-template-columns:repeat(2,1fr);grid-gap:20px}
+.conexaoBlock{padding:10px;border:1px solid #eee2df;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:5px}
+.conexaoBlock button span{color:#fff}
+.conexaoBlock button{margin-top:10px;background-color:#1f8a70;transition:.3s ease all}
+.conexaoBlock button:hover{background-color:green}
+.conexaoContent{position:relative;margin-top:20px;flex-direction:column;display:none}
+    </style>
+
+
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Article headline",
+      "image": [
+        "thumbnail1.jpg"
+      ],
+      "datePublished": "2015-02-05T08:00:00+08:00"
+    }
+    </script>
+
+
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,400i,700,700i&display=swap" rel="stylesheet">
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="telaGov.css"> -->
+
+
+  </head>
+
+
+  <body>
+
+<header>
+  
+</header>
+
+
+<div class="container">
+  <div class="statusBarWrapper">
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28.6 20"xml:space="preserve"><path fill="#EEE2DF" d="M24.3,8.6c2,0,3.6-1.6,3.6-3.6s-1.6-3.6-3.6-3.6S20.7,3,20.7,5S22.3,8.6,24.3,8.6z M24.3,2.9 c1.2,0,2.1,1,2.1,2.1s-1,2.1-2.1,2.1c-1.2,0-2.1-1-2.1-2.1S23.1,2.9,24.3,2.9z M14.3,10c2.8,0,5-2.2,5-5s-2.2-5-5-5s-5,2.2-5,5 S11.5,10,14.3,10z M14.3,1.4c2,0,3.6,1.6,3.6,3.6s-1.6,3.6-3.6,3.6S10.7,7,10.7,5S12.3,1.4,14.3,1.4z M25.2,10h-1.8 c-0.7,0-1.3,0.2-1.8,0.6c0.4,0.3,0.8,0.6,1.1,1c0.2-0.1,0.5-0.1,0.7-0.1h1.8c1.1,0,2,1,2,2.1c0,0.4,0.3,0.7,0.7,0.7s0.7-0.3,0.7-0.7 C28.6,11.6,27,10,25.2,10z M4.3,8.6c2,0,3.6-1.6,3.6-3.6S6.3,1.4,4.3,1.4S0.7,3,0.7,5S2.3,8.6,4.3,8.6z M4.3,2.9 c1.2,0,2.1,1,2.1,2.1s-1,2.1-2.1,2.1S2.1,6.2,2.1,5S3.1,2.9,4.3,2.9z M17.9,10.9c-1.5,0-1.9,0.5-3.6,0.5s-2.1-0.5-3.6-0.5 c-1.6,0-3.2,0.7-4.1,2.1c-0.6,0.8-0.9,1.8-0.9,2.9v2c0,1.2,1,2.1,2.1,2.1h12.9c1.2,0,2.1-1,2.1-2.1v-2c0-1.1-0.3-2-0.9-2.9 C21.1,11.6,19.5,10.9,17.9,10.9L17.9,10.9z M21.4,17.9c0,0.4-0.3,0.7-0.7,0.7H7.9c-0.4,0-0.7-0.3-0.7-0.7v-2c0-0.7,0.2-1.5,0.6-2.1 c0.6-0.9,1.7-1.5,2.9-1.5c1.2,0,1.7,0.5,3.6,0.5s2.4-0.5,3.6-0.5s2.3,0.5,2.9,1.5c0.4,0.6,0.6,1.3,0.6,2.1L21.4,17.9L21.4,17.9z M7,10.6C6.5,10.2,5.9,10,5.2,10H3.4C1.5,10,0,11.6,0,13.6c0,0.4,0.3,0.7,0.7,0.7s0.7-0.3,0.7-0.7c0-1.2,0.9-2.1,2-2.1h1.8 c0.2,0,0.5,0.1,0.7,0.1C6.2,11.2,6.6,10.9,7,10.6L7,10.6z"/></svg>
+      <span class="btnText">Total</span>
+      <span class="btnText">000</span>
+    </button>
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 25 20"xml:space="preserve"><path fill="#EEE2DF" d="M23.1,11.3h-0.6V9.4c0-1.7-1.4-3.1-3.1-3.1c-1.7,0-3.1,1.4-3.1,3.1v1.9h-0.6c-1,0-1.9,0.8-1.9,1.9v5 c0,1,0.8,1.9,1.9,1.9h7.5c1,0,1.9-0.8,1.9-1.9v-5C25,12.1,24.2,11.3,23.1,11.3z M17.5,9.4c0-1,0.8-1.9,1.9-1.9s1.9,0.8,1.9,1.9v1.9 h-3.8V9.4z M23.8,18.1c0,0.3-0.3,0.6-0.6,0.6h-7.5c-0.3,0-0.6-0.3-0.6-0.6v-5c0-0.3,0.3-0.6,0.6-0.6h7.5c0.3,0,0.6,0.3,0.6,0.6V18.1 z M8.8,10c2.8,0,5-2.2,5-5s-2.2-5-5-5s-5,2.2-5,5S6,10,8.8,10z M8.8,1.3c2.1,0,3.8,1.7,3.8,3.8s-1.7,3.8-3.8,3.8S5,7.1,5,5 S6.7,1.3,8.8,1.3z M1.9,18.8c-0.3,0-0.6-0.3-0.6-0.6v-1.6c0-2.2,1.8-4,4-4c0.8,0,1.5,0.6,3.5,0.6c2,0,2.7-0.6,3.5-0.6 c0.1,0,0.2,0,0.3,0c0.1-0.4,0.3-0.8,0.5-1.2c-0.3,0-0.5-0.1-0.8-0.1c-1.1,0-1.7,0.6-3.5,0.6s-2.4-0.6-3.5-0.6 c-2.9,0-5.2,2.4-5.2,5.3v1.6c0,1,0.8,1.9,1.9,1.9h11.3c-0.3-0.4-0.5-0.8-0.6-1.3H1.9z"/></svg>
+      <span class="btnText">A expirar</span>
+      <span class="btnText">000</span>
+    </button>
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 25 20"xml:space="preserve"> <path fill="#EEE2DF" d="M8.8,10c2.8,0,5-2.2,5-5s-2.2-5-5-5s-5,2.2-5,5S6,10,8.8,10z M8.8,1.3c2.1,0,3.8,1.7,3.8,3.8 s-1.7,3.8-3.8,3.8S5,7.1,5,5S6.7,1.3,8.8,1.3z M19.4,8.8c-3.1,0-5.6,2.5-5.6,5.6s2.5,5.6,5.6,5.6s5.6-2.5,5.6-5.6S22.5,8.8,19.4,8.8 z M19.4,18.8c-2.4,0-4.4-2-4.4-4.4s2-4.4,4.4-4.4s4.4,2,4.4,4.4S21.8,18.8,19.4,18.8z M14.1,18.8H1.9c-0.3,0-0.6-0.3-0.6-0.6v-1.6 c0-2.2,1.8-4,4-4c0.8,0,1.5,0.6,3.5,0.6c2,0,2.7-0.6,3.5-0.6c0.2,0,0.3,0,0.5,0.1c0.1-0.4,0.3-0.8,0.5-1.2c-0.3-0.1-0.6-0.1-1-0.1 c-1.1,0-1.7,0.6-3.5,0.6s-2.4-0.6-3.5-0.6c-2.9,0-5.3,2.4-5.3,5.3v1.6c0,1,0.8,1.9,1.9,1.9h13.6C14.9,19.6,14.5,19.2,14.1,18.8 L14.1,18.8z M21.5,13.8H20v-2.1c0-0.2-0.2-0.4-0.4-0.4h-0.5c-0.2,0-0.4,0.2-0.4,0.4v3c0,0.2,0.2,0.4,0.4,0.4h2.4 c0.2,0,0.4-0.2,0.4-0.4v-0.5C21.9,13.9,21.7,13.8,21.5,13.8L21.5,13.8z"/> </svg>
+      <span class="btnText">Balanço</span>
+      <span class="btnText">000</span>
+    </button>
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"xml:space="preserve"> <path fill="#EEE2DF" d="M12.5,8v0.3c0,0.3-0.2,0.5-0.5,0.5H8.7V12c0,0.3-0.2,0.5-0.5,0.5H8c-0.3,0-0.5-0.2-0.5-0.5V8.8H4.2 C4,8.8,3.7,8.5,3.7,8.3V8c0-0.3,0.2-0.5,0.5-0.5h3.3V4.2C7.5,4,7.7,3.8,8,3.8h0.3c0.3,0,0.5,0.2,0.5,0.5v3.3H12 C12.3,7.5,12.5,7.7,12.5,8z M19.9,19.4l-0.4,0.4c-0.2,0.2-0.5,0.2-0.7,0l-5-5c-0.1-0.1-0.1-0.2-0.1-0.3v-0.3 c-1.4,1.3-3.4,2.1-5.5,2.1c-4.5,0-8.1-3.6-8.1-8C-0.1,3.7,3.7-0.1,8.2,0c4.5,0.1,8,3.7,8,8.1c0,2.1-0.8,4-2.1,5.5h0.3 c0.1,0,0.2,0.1,0.3,0.1l5,5C20,18.9,20,19.2,19.9,19.4z M15,8.1c0-3.8-3.1-6.9-6.9-6.9S1.3,4.3,1.3,8.1S4.3,15,8.1,15 S15,11.9,15,8.1z"/> </svg>
+      <span class="btnText">Ver Todos</span>
+    </button>
+    <button>
+      <svg fill="#F4EDD6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M336 32c-48.6 0-92.6 9-124.5 23.4-.9.4-51.5 21-51.5 56.6v16.7C76.1 132.2 0 163.4 0 208v192c0 44.2 78.8 80 176 80s176-35.8 176-80v-16.4c89.7-3.7 160-37.9 160-79.6V112c0-37-62.1-80-176-80zm-16 368c0 13.9-50.5 48-144 48S32 413.9 32 400v-50.1c31.8 20.6 84.4 34.1 144 34.1s112.2-13.5 144-34.1V400zm0-96c0 13.9-50.5 48-144 48S32 317.9 32 304v-50.1c31.8 20.6 84.4 34.1 144 34.1s112.2-13.5 144-34.1V304zm-144-48c-81 0-146.7-21.5-146.7-48S95 160 176 160s146.7 21.5 146.7 48S257 256 176 256zm304 48c0 13.1-45 43.6-128 47.3v-64.1c52.8-2.2 99.1-14.6 128-33.3V304zm0-96c0 13.1-45.1 43.4-128 47.2V208c0-5.6-1.7-11-4.1-16.3 54.6-1.7 102.4-14.5 132.1-33.8V208zm-144-48c-7.3 0-14-.5-20.9-.9-36.9-21.7-85-28.2-115.6-30-6.3-5.3-10.1-11-10.1-17.1 0-26.5 65.7-48 146.7-48s146.7 21.5 146.7 48S417 160 336 160z"/></svg>
+      <span class="btnText">Créditos: 199</span>
+    </button>
+  </div>
+
+
+  <div class="searchResultsWrapper">
+      <div class="scrollbar" id="style-3-scrollbar">
+        <div class="force-overflow">
+
+
+
+
+          <!-- ################################################################################# -->
+          <!-- bloco contato gov################################################################ -->
+          <!-- ################################################################################# -->
+          <div class="profileContainer">
+            <div class="govProfileHeader">
+              <div>
+                <span>Cargo: <strong>Deputado Federal</strong></span>
+                <span>Orgão: <strong>Ministério da Saúde</strong></span>
+                <span>Cidade: <strong>São José do Rio Preto</strong></span>
+                <span>Estado: <strong>São Paulo</strong></span>
+              </div>
+            </div>
+            <div class="govProfileWrapper">
+              <button class="desbloquearBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30"xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"/></svg>
+                <span>Desbloquear Contato GOV</span>
+              </button>
+              <div class="profileImgWrapper">
+                <div class="profileImgMask">
+                  <amp-img alt="A view of the sea" src="profileImg1.jpg" width="300" height="300" layout="responsive"></amp-img>
+                </div>
+                <span class="profileImgNomeGov">Nome Sobrenome</span>
+                <span class="expiraText">Contato expira em 20 dias</span>
+              </div>
+              <div class="govProfileTabsWrapper">
+                <amp-selector class="tabs-with-flex" role="tablist">
+                  <div id="tab1" role="tab" aria-controls="tabpanel1" option selected>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24.8 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M8.7,9.9c2.7,0,5-2.2,5-5s-2.2-5-5-5c-2.7,0-5,2.2-5,5S5.9,9.9,8.7,9.9z M8.7,1.2c2.1,0,3.7,1.7,3.7,3.7 s-1.7,3.7-3.7,3.7S5,7,5,5C5,2.9,6.6,1.2,8.7,1.2z M24.4,14.1l-3.5-3.5c-0.5-0.5-1.1-0.7-1.8-0.7h-3.1c-0.7,0-1.2,0.6-1.2,1.2v3.1 c0,0.7,0.3,1.3,0.7,1.8l3.5,3.5c0.2,0.2,0.6,0.4,0.9,0.4s0.6-0.1,0.9-0.4l3.6-3.6C24.9,15.4,24.9,14.6,24.4,14.1L24.4,14.1z M20,18.6l-3.5-3.5c-0.2-0.2-0.4-0.5-0.4-0.9v-3.1h3.1c0.3,0,0.6,0.1,0.9,0.4l3.5,3.5L20,18.6z M18,12.4c-0.3,0-0.6,0.3-0.6,0.6 c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6C18.6,12.7,18.3,12.4,18,12.4z M15.5,18.6H1.9c-0.3,0-0.6-0.3-0.6-0.6v-1.6c0-2.2,1.8-4,4-4 C6,12.4,6.7,13,8.7,13c1.9,0,2.7-0.6,3.5-0.6c0.5,0,1,0.1,1.5,0.3v-1.3c-0.5-0.1-1-0.2-1.5-0.2c-1.1,0-1.6,0.6-3.5,0.6 s-2.4-0.6-3.5-0.6c-2.9,0-5.2,2.3-5.2,5.2V18c0,1,0.8,1.9,1.9,1.9h13.6c0.6,0,1.1-0.3,1.5-0.7l-0.9-0.9C16,18.4,15.8,18.6,15.5,18.6 L15.5,18.6z"/> </svg>
+                    <span>Dados pessoais</span>
+                  </div>
+                  <div id="tabpanel1" role="tabpanel" aria-labelledby="tab1">
+                    <div class="tabContent">
+                      <span>Nome Civil: <strong>Nome Sbrenome nome sobrenome</strong></span>
+                      <span>Partido: <strong>Bloco Parlamentar Senado Independente - PSB</strong></span>
+                      <span>Data de nascimento: <strong>30/09/1971</strong></span>
+                      <span>Naturalidade: <strong>Brasília - DF</strong></span>
+                      <span>Período: <strong>2019 - 2027</strong></span>
+                    </div>
+                  </div>
+                  <div id="tab2" role="tab" aria-controls="tabpanel2" option>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.4 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M16.9,6.2c0.3,0,0.5-0.2,0.5-0.5V4.2c0-0.3-0.2-0.5-0.5-0.5h-0.8V2.5C16.1,1.1,15,0,13.6,0H2.5 C1.1,0,0,1.1,0,2.5v14.9c0,1.4,1.1,2.5,2.5,2.5h11.2c1.4,0,2.5-1.1,2.5-2.5v-1.2h0.8c0.3,0,0.5-0.2,0.5-0.5v-1.6 c0-0.3-0.2-0.5-0.5-0.5h-0.8v-2.5h0.8c0.3,0,0.5-0.2,0.5-0.5V9.1c0-0.3-0.2-0.5-0.5-0.5h-0.8V6.2H16.9z M14.9,17.4 c0,0.7-0.6,1.2-1.2,1.2H2.5c-0.7,0-1.2-0.6-1.2-1.2V2.5c0-0.7,0.6-1.2,1.2-1.2h11.2c0.7,0,1.2,0.6,1.2,1.2V17.4z M8.1,10.5 c1.7,0,3.1-1.4,3.1-3.1S9.8,4.3,8.1,4.3S5,5.7,5,7.4S6.3,10.5,8.1,10.5z M8.1,5.6c1,0,1.9,0.8,1.9,1.9S9.1,9.3,8.1,9.3 S6.2,8.5,6.2,7.4S7,5.6,8.1,5.6z M9.9,11.2c-0.8,0-0.9,0.3-1.8,0.3S7,11.2,6.2,11.2c-0.8,0-1.6,0.4-2.1,1.1 c-0.3,0.4-0.4,0.9-0.4,1.5v1.5c0,0.2,0.1,0.3,0.3,0.3h0.6c0.2,0,0.3-0.1,0.3-0.3v-1.5c0-0.3,0.1-0.5,0.2-0.8 c0.2-0.3,0.6-0.5,1.1-0.5c0.5,0,0.8,0.3,1.8,0.3c1,0,1.3-0.3,1.8-0.3c0.4,0,0.8,0.2,1.1,0.5c0.2,0.2,0.2,0.5,0.2,0.8v1.5 c0,0.2,0.1,0.3,0.3,0.3h0.6c0.2,0,0.3-0.1,0.3-0.3v-1.5c0-0.5-0.2-1-0.4-1.5C11.5,11.5,10.7,11.2,9.9,11.2L9.9,11.2z"/> </svg>
+                    <span>Contatos</span>
+                  </div>
+                  <div id="tabpanel2" role="tabpanel" aria-labelledby="tab2">
+                    <div class="tabContent">
+                      <span>Telefone Principal: <strong>61 3452-0000</strong></span>
+                      <span>Telefone 2: <strong>61 3452-0000</strong></span>
+                      <span>Telefone 3: <strong>61 3452-0000</strong></span>
+                      <span>E-mail Principal: <strong>df.nomecompleto@senado.leg.br</strong></span>
+                      <span>E-mail 2: <strong>df.nomecompleto@senado.leg.br</strong></span>
+                    </div>
+                  </div>
+                  <div id="tab3" role="tab" aria-controls="tabpanel3" option>
+                    <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm193.2 152h-82.5c-9-44.4-24.1-82.2-43.2-109.1 55 18.2 100.2 57.9 125.7 109.1zM336 256c0 22.9-1.6 44.2-4.3 64H164.3c-2.7-19.8-4.3-41.1-4.3-64s1.6-44.2 4.3-64h167.4c2.7 19.8 4.3 41.1 4.3 64zM248 40c26.9 0 61.4 44.1 78.1 120H169.9C186.6 84.1 221.1 40 248 40zm-67.5 10.9c-19 26.8-34.2 64.6-43.2 109.1H54.8c25.5-51.2 70.7-90.9 125.7-109.1zM32 256c0-22.3 3.4-43.8 9.7-64h90.5c-2.6 20.5-4.2 41.8-4.2 64s1.5 43.5 4.2 64H41.7c-6.3-20.2-9.7-41.7-9.7-64zm22.8 96h82.5c9 44.4 24.1 82.2 43.2 109.1-55-18.2-100.2-57.9-125.7-109.1zM248 472c-26.9 0-61.4-44.1-78.1-120h156.2c-16.7 75.9-51.2 120-78.1 120zm67.5-10.9c19-26.8 34.2-64.6 43.2-109.1h82.5c-25.5 51.2-70.7 90.9-125.7 109.1zM363.8 320c2.6-20.5 4.2-41.8 4.2-64s-1.5-43.5-4.2-64h90.5c6.3 20.2 9.7 41.7 9.7 64s-3.4 43.8-9.7 64h-90.5z"></path></svg>
+                    <span>Redes sociais</span>
+                  </div>
+                  <div id="tabpanel3" role="tabpanel" aria-labelledby="tab3">
+                    <div class="tabContent">
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M241.5 240.7L20.83 303.41c-15.63 4.44-17.46 25.86-2.82 32.89l55.27 26.54-60.59 60.59c-12.5 12.5-12.5 32.76 0 45.25l22.62 22.62c6.25 6.25 14.44 9.37 22.63 9.37s16.38-3.12 22.63-9.37l60.59-60.59 26.54 55.27c3.25 6.76 9.56 10.01 15.86 10.01 7.34 0 14.64-4.41 17.04-12.83l62.72-220.67c3.77-13.3-8.53-25.57-21.82-21.79zm-61.35 197.32l-29.7-61.85-92.51 92.51-22.62-22.62 92.51-92.51-61.84-29.71 159.5-45.33-45.34 159.51zM328 256c0-44.11-35.89-80-80-80-33.74 0-62.53 21.07-74.26 50.69C228.07 211.24 236.67 208 248 208c26.47 0 48 21.53 48 48 0 11.26-3.1 19.44-18.69 74.26C306.93 318.53 328 289.74 328 256zm-76.08 163.61C340.71 417.47 412 345.29 412 256c0-90.65-73.36-164-164-164-89.31 0-161.47 71.3-163.61 160.08l32.95-9.36C124.12 176.23 179.76 124 248 124c72.79 0 132 59.21 132 132 0 68.23-52.24 123.88-118.71 130.66l-9.37 32.95zM248 8C111.03 8 0 119.03 0 256c0 7.3.47 14.49 1.09 21.63 3.46-1.97 7-3.87 10.99-5l20.47-5.82c-.18-3.6-.55-7.16-.55-10.81 0-119.1 96.9-216 216-216s216 96.9 216 216-96.9 216-216 216c-3.65 0-7.21-.37-10.81-.55l-5.82 20.46c-1.14 4.02-3.15 7.5-5.14 10.98 7.19.63 14.42 1.1 21.77 1.1 136.97 0 248-111.03 248-248S384.97 8 248 8z"/></svg>
+                        <span>Site Principal:</span>
+                        <span>nomeseobrenome.com.br</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M241.5 240.7L20.83 303.41c-15.63 4.44-17.46 25.86-2.82 32.89l55.27 26.54-60.59 60.59c-12.5 12.5-12.5 32.76 0 45.25l22.62 22.62c6.25 6.25 14.44 9.37 22.63 9.37s16.38-3.12 22.63-9.37l60.59-60.59 26.54 55.27c3.25 6.76 9.56 10.01 15.86 10.01 7.34 0 14.64-4.41 17.04-12.83l62.72-220.67c3.77-13.3-8.53-25.57-21.82-21.79zm-61.35 197.32l-29.7-61.85-92.51 92.51-22.62-22.62 92.51-92.51-61.84-29.71 159.5-45.33-45.34 159.51zM328 256c0-44.11-35.89-80-80-80-33.74 0-62.53 21.07-74.26 50.69C228.07 211.24 236.67 208 248 208c26.47 0 48 21.53 48 48 0 11.26-3.1 19.44-18.69 74.26C306.93 318.53 328 289.74 328 256zm-76.08 163.61C340.71 417.47 412 345.29 412 256c0-90.65-73.36-164-164-164-89.31 0-161.47 71.3-163.61 160.08l32.95-9.36C124.12 176.23 179.76 124 248 124c72.79 0 132 59.21 132 132 0 68.23-52.24 123.88-118.71 130.66l-9.37 32.95zM248 8C111.03 8 0 119.03 0 256c0 7.3.47 14.49 1.09 21.63 3.46-1.97 7-3.87 10.99-5l20.47-5.82c-.18-3.6-.55-7.16-.55-10.81 0-119.1 96.9-216 216-216s216 96.9 216 216-96.9 216-216 216c-3.65 0-7.21-.37-10.81-.55l-5.82 20.46c-1.14 4.02-3.15 7.5-5.14 10.98 7.19.63 14.42 1.1 21.77 1.1 136.97 0 248-111.03 248-248S384.97 8 248 8z"/></svg>
+                        <span>Site 2:</span>
+                        <span>nomeseobrenome.com.br</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div id="tab4" role="tab" aria-controls="tabpanel4" option>
+                    <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                    <span>Endereços</span>
+                  </div>
+                  <div id="tabpanel4" role="tabpanel" aria-labelledby="tab4">
+                    <div class="enderecoContainer">
+                      <div class="enderecoTitleWrapper">
+                      <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                      <span>Gabinete</span>
+                      </div>
+                      <div class="enderecoData">
+                        <!-- <span>Nome: <strong>Gabinete</strong></span> -->
+                        <span>Endereço: <strong>Senado Federal</strong></span>
+                        <span>Complemento: <strong>Anexo 2 Ala Teotônio Vilela Gabinete 11</strong></span>
+                        <span>Cidade: <strong>Brasília</strong></span>
+                        <span>UF: <strong>Distrito Federal</strong></span>
+                      </div>
+                    </div>
+                    <div class="enderecoContainer">
+                      <div class="enderecoTitleWrapper">
+                      <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                      <span>Escritório de Apoio</span>
+                      </div>
+                      <div class="enderecoData">
+                        <!-- <span>Nome: <strong>Gabinete</strong></span> -->
+                        <span>Endereço: <strong>Quadra SDS. Ed. Eldorado</strong></span>
+                        <span>Complemento: <strong>BLOCO "D", N. 60, SALA 315</strong></span>
+                        <span>Cidade: <strong>Brasília</strong></span>
+                        <span>UF: <strong>Distrito Federal</strong></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab5" role="tab" aria-controls="tabpanel5" option>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28.4 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M21.3,9.9c2.3,0,4.3-1.9,4.3-4.3s-1.9-4.3-4.3-4.3S17,3.3,17,5.7S18.9,9.9,21.3,9.9z M21.3,2.8 c1.6,0,2.8,1.3,2.8,2.8s-1.3,2.8-2.8,2.8s-2.8-1.3-2.8-2.8S19.7,2.8,21.3,2.8z M8.5,9.9c2.7,0,5-2.2,5-5s-2.2-5-5-5s-5,2.2-5,5 S5.8,9.9,8.5,9.9z M8.5,1.4C10.5,1.4,12,3,12,5s-1.6,3.5-3.5,3.5S5,6.9,5,5S6.6,1.4,8.5,1.4z M12.1,10.8c-1.5,0-1.8,0.5-3.5,0.5 S6.4,10.8,5,10.8c-1.6,0-3.2,0.7-4.1,2.1C0.3,13.7,0,14.7,0,15.7v2c0,1.2,1,2.1,2.1,2.1h12.8c1.2,0,2.1-1,2.1-2.1v-2 c0-1.1-0.3-2-0.9-2.8C15.2,11.5,13.7,10.8,12.1,10.8L12.1,10.8z M15.6,17.7c0,0.4-0.3,0.7-0.7,0.7H2.1c-0.4,0-0.7-0.3-0.7-0.7v-2 c0-0.7,0.2-1.4,0.6-2.1c0.6-0.9,1.7-1.5,2.9-1.5c1.2,0,1.6,0.5,3.6,0.5s2.3-0.5,3.5-0.5s2.3,0.5,2.9,1.5c0.4,0.6,0.6,1.3,0.6,2.1 L15.6,17.7L15.6,17.7z M27.6,12.6c-0.8-1.1-2.1-1.7-3.4-1.7c-1.2,0-1.5,0.4-3,0.4s-1.7-0.4-3-0.4c-0.6,0-1.2,0.1-1.7,0.4 c0.7,0.7,0.8,1,0.9,1.2c0.3-0.1,0.5-0.1,0.8-0.1c1,0,1.3,0.4,3,0.4s2-0.4,3-0.4c0.9,0,1.8,0.4,2.2,1.1c0.3,0.5,0.5,1,0.5,1.6v1.6 c0,0.2-0.2,0.4-0.4,0.4h-8.2c0,0.8,0,1-0.1,1.4h8.2c1,0,1.8-0.8,1.8-1.8V15C28.4,14.1,28.1,13.3,27.6,12.6z"/> </svg>
+                    <span>conexões</span>
+                  </div>
+                  <div id="tabpanel5" role="tabpanel" aria-labelledby="tab5">
+                    <div class="conexoesWrapper">
+                      <div class="conexaoBlock">
+                        <span>ASSESSOR DE IMPRENSA</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>SECRETÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>ESTAGIÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>PRIMEIRO SUPLENTE</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                     <div class="conexaoBlock">
+                        <span>ASSESSOR DE IMPRENSA</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>SECRETÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>ESTAGIÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>PRIMEIRO SUPLENTE</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </amp-selector>
+              </div>
+            </div>
+          </div>
+          <!-- ################################################################################# -->
+          <!-- bloco contato gov################################################################ -->
+          <!-- ################################################################################# -->
+
+
+
+
+
+
+
+
+          <!-- ################################################################################# -->
+          <!-- bloco contato gov################################################################ -->
+          <!-- ################################################################################# -->
+          <div class="profileContainer">
+            <div class="govProfileHeader">
+              <div>
+                <span>Cargo: <strong>Deputado Federal</strong></span>
+                <span>Orgão: <strong>Ministério da Saúde</strong></span>
+                <span>Cidade: <strong>São José do Rio Preto</strong></span>
+                <span>Estado: <strong>São Paulo</strong></span>
+              </div>
+            </div>
+            <div class="govProfileWrapper">
+              <button class="desbloquearBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30"xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"/></svg>
+                <span>Desbloquear Contato GOV</span>
+              </button>
+              <div class="profileImgWrapper">
+                <div class="profileImgMask">
+                  <amp-img alt="A view of the sea" src="profileImg1.jpg" width="300" height="300" layout="responsive"></amp-img>
+                </div>
+                <span class="profileImgNomeGov">Nome Sobrenome</span>
+                <span class="expiraText">Contato expira em 20 dias</span>
+              </div>
+              <div class="govProfileTabsWrapper">
+                <amp-selector class="tabs-with-flex" role="tablist">
+                  <div id="tab1" role="tab" aria-controls="tabpanel1" option selected>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24.8 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M8.7,9.9c2.7,0,5-2.2,5-5s-2.2-5-5-5c-2.7,0-5,2.2-5,5S5.9,9.9,8.7,9.9z M8.7,1.2c2.1,0,3.7,1.7,3.7,3.7 s-1.7,3.7-3.7,3.7S5,7,5,5C5,2.9,6.6,1.2,8.7,1.2z M24.4,14.1l-3.5-3.5c-0.5-0.5-1.1-0.7-1.8-0.7h-3.1c-0.7,0-1.2,0.6-1.2,1.2v3.1 c0,0.7,0.3,1.3,0.7,1.8l3.5,3.5c0.2,0.2,0.6,0.4,0.9,0.4s0.6-0.1,0.9-0.4l3.6-3.6C24.9,15.4,24.9,14.6,24.4,14.1L24.4,14.1z M20,18.6l-3.5-3.5c-0.2-0.2-0.4-0.5-0.4-0.9v-3.1h3.1c0.3,0,0.6,0.1,0.9,0.4l3.5,3.5L20,18.6z M18,12.4c-0.3,0-0.6,0.3-0.6,0.6 c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6C18.6,12.7,18.3,12.4,18,12.4z M15.5,18.6H1.9c-0.3,0-0.6-0.3-0.6-0.6v-1.6c0-2.2,1.8-4,4-4 C6,12.4,6.7,13,8.7,13c1.9,0,2.7-0.6,3.5-0.6c0.5,0,1,0.1,1.5,0.3v-1.3c-0.5-0.1-1-0.2-1.5-0.2c-1.1,0-1.6,0.6-3.5,0.6 s-2.4-0.6-3.5-0.6c-2.9,0-5.2,2.3-5.2,5.2V18c0,1,0.8,1.9,1.9,1.9h13.6c0.6,0,1.1-0.3,1.5-0.7l-0.9-0.9C16,18.4,15.8,18.6,15.5,18.6 L15.5,18.6z"/> </svg>
+                    <span>Dados pessoais</span>
+                  </div>
+                  <div id="tabpanel1" role="tabpanel" aria-labelledby="tab1">
+                    <div class="tabContent">
+                      <span>Nome Civil: <strong>Nome Sbrenome nome sobrenome</strong></span>
+                      <span>Partido: <strong>Bloco Parlamentar Senado Independente - PSB</strong></span>
+                      <span>Data de nascimento: <strong>30/09/1971</strong></span>
+                      <span>Naturalidade: <strong>Brasília - DF</strong></span>
+                      <span>Período: <strong>2019 - 2027</strong></span>
+                    </div>
+                  </div>
+                  <div id="tab2" role="tab" aria-controls="tabpanel2" option>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.4 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M16.9,6.2c0.3,0,0.5-0.2,0.5-0.5V4.2c0-0.3-0.2-0.5-0.5-0.5h-0.8V2.5C16.1,1.1,15,0,13.6,0H2.5 C1.1,0,0,1.1,0,2.5v14.9c0,1.4,1.1,2.5,2.5,2.5h11.2c1.4,0,2.5-1.1,2.5-2.5v-1.2h0.8c0.3,0,0.5-0.2,0.5-0.5v-1.6 c0-0.3-0.2-0.5-0.5-0.5h-0.8v-2.5h0.8c0.3,0,0.5-0.2,0.5-0.5V9.1c0-0.3-0.2-0.5-0.5-0.5h-0.8V6.2H16.9z M14.9,17.4 c0,0.7-0.6,1.2-1.2,1.2H2.5c-0.7,0-1.2-0.6-1.2-1.2V2.5c0-0.7,0.6-1.2,1.2-1.2h11.2c0.7,0,1.2,0.6,1.2,1.2V17.4z M8.1,10.5 c1.7,0,3.1-1.4,3.1-3.1S9.8,4.3,8.1,4.3S5,5.7,5,7.4S6.3,10.5,8.1,10.5z M8.1,5.6c1,0,1.9,0.8,1.9,1.9S9.1,9.3,8.1,9.3 S6.2,8.5,6.2,7.4S7,5.6,8.1,5.6z M9.9,11.2c-0.8,0-0.9,0.3-1.8,0.3S7,11.2,6.2,11.2c-0.8,0-1.6,0.4-2.1,1.1 c-0.3,0.4-0.4,0.9-0.4,1.5v1.5c0,0.2,0.1,0.3,0.3,0.3h0.6c0.2,0,0.3-0.1,0.3-0.3v-1.5c0-0.3,0.1-0.5,0.2-0.8 c0.2-0.3,0.6-0.5,1.1-0.5c0.5,0,0.8,0.3,1.8,0.3c1,0,1.3-0.3,1.8-0.3c0.4,0,0.8,0.2,1.1,0.5c0.2,0.2,0.2,0.5,0.2,0.8v1.5 c0,0.2,0.1,0.3,0.3,0.3h0.6c0.2,0,0.3-0.1,0.3-0.3v-1.5c0-0.5-0.2-1-0.4-1.5C11.5,11.5,10.7,11.2,9.9,11.2L9.9,11.2z"/> </svg>
+                    <span>Contatos</span>
+                  </div>
+                  <div id="tabpanel2" role="tabpanel" aria-labelledby="tab2">
+                    <div class="tabContent">
+                      <span>Telefone Principal: <strong>61 3452-0000</strong></span>
+                      <span>Telefone 2: <strong>61 3452-0000</strong></span>
+                      <span>Telefone 3: <strong>61 3452-0000</strong></span>
+                      <span>E-mail Principal: <strong>df.nomecompleto@senado.leg.br</strong></span>
+                      <span>E-mail 2: <strong>df.nomecompleto@senado.leg.br</strong></span>
+                    </div>
+                  </div>
+                  <div id="tab3" role="tab" aria-controls="tabpanel3" option>
+                    <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm193.2 152h-82.5c-9-44.4-24.1-82.2-43.2-109.1 55 18.2 100.2 57.9 125.7 109.1zM336 256c0 22.9-1.6 44.2-4.3 64H164.3c-2.7-19.8-4.3-41.1-4.3-64s1.6-44.2 4.3-64h167.4c2.7 19.8 4.3 41.1 4.3 64zM248 40c26.9 0 61.4 44.1 78.1 120H169.9C186.6 84.1 221.1 40 248 40zm-67.5 10.9c-19 26.8-34.2 64.6-43.2 109.1H54.8c25.5-51.2 70.7-90.9 125.7-109.1zM32 256c0-22.3 3.4-43.8 9.7-64h90.5c-2.6 20.5-4.2 41.8-4.2 64s1.5 43.5 4.2 64H41.7c-6.3-20.2-9.7-41.7-9.7-64zm22.8 96h82.5c9 44.4 24.1 82.2 43.2 109.1-55-18.2-100.2-57.9-125.7-109.1zM248 472c-26.9 0-61.4-44.1-78.1-120h156.2c-16.7 75.9-51.2 120-78.1 120zm67.5-10.9c19-26.8 34.2-64.6 43.2-109.1h82.5c-25.5 51.2-70.7 90.9-125.7 109.1zM363.8 320c2.6-20.5 4.2-41.8 4.2-64s-1.5-43.5-4.2-64h90.5c6.3 20.2 9.7 41.7 9.7 64s-3.4 43.8-9.7 64h-90.5z"></path></svg>
+                    <span>Redes sociais</span>
+                  </div>
+                  <div id="tabpanel3" role="tabpanel" aria-labelledby="tab3">
+                    <div class="tabContent">
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div id="tab4" role="tab" aria-controls="tabpanel4" option>
+                    <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                    <span>Endereços</span>
+                  </div>
+                  <div id="tabpanel4" role="tabpanel" aria-labelledby="tab4">
+                    <div class="enderecoContainer">
+                      <div class="enderecoTitleWrapper">
+                      <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                      <span>Gabinete</span>
+                      </div>
+                      <div class="enderecoData">
+                        <!-- <span>Nome: <strong>Gabinete</strong></span> -->
+                        <span>Endereço: <strong>Senado Federal</strong></span>
+                        <span>Complemento: <strong>Anexo 2 Ala Teotônio Vilela Gabinete 11</strong></span>
+                        <span>Cidade: <strong>Brasília</strong></span>
+                        <span>UF: <strong>Distrito Federal</strong></span>
+                      </div>
+                    </div>
+                    <div class="enderecoContainer">
+                      <div class="enderecoTitleWrapper">
+                      <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                      <span>Escritório de Apoio</span>
+                      </div>
+                      <div class="enderecoData">
+                        <!-- <span>Nome: <strong>Gabinete</strong></span> -->
+                        <span>Endereço: <strong>Quadra SDS. Ed. Eldorado</strong></span>
+                        <span>Complemento: <strong>BLOCO "D", N. 60, SALA 315</strong></span>
+                        <span>Cidade: <strong>Brasília</strong></span>
+                        <span>UF: <strong>Distrito Federal</strong></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab5" role="tab" aria-controls="tabpanel5" option>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28.4 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M21.3,9.9c2.3,0,4.3-1.9,4.3-4.3s-1.9-4.3-4.3-4.3S17,3.3,17,5.7S18.9,9.9,21.3,9.9z M21.3,2.8 c1.6,0,2.8,1.3,2.8,2.8s-1.3,2.8-2.8,2.8s-2.8-1.3-2.8-2.8S19.7,2.8,21.3,2.8z M8.5,9.9c2.7,0,5-2.2,5-5s-2.2-5-5-5s-5,2.2-5,5 S5.8,9.9,8.5,9.9z M8.5,1.4C10.5,1.4,12,3,12,5s-1.6,3.5-3.5,3.5S5,6.9,5,5S6.6,1.4,8.5,1.4z M12.1,10.8c-1.5,0-1.8,0.5-3.5,0.5 S6.4,10.8,5,10.8c-1.6,0-3.2,0.7-4.1,2.1C0.3,13.7,0,14.7,0,15.7v2c0,1.2,1,2.1,2.1,2.1h12.8c1.2,0,2.1-1,2.1-2.1v-2 c0-1.1-0.3-2-0.9-2.8C15.2,11.5,13.7,10.8,12.1,10.8L12.1,10.8z M15.6,17.7c0,0.4-0.3,0.7-0.7,0.7H2.1c-0.4,0-0.7-0.3-0.7-0.7v-2 c0-0.7,0.2-1.4,0.6-2.1c0.6-0.9,1.7-1.5,2.9-1.5c1.2,0,1.6,0.5,3.6,0.5s2.3-0.5,3.5-0.5s2.3,0.5,2.9,1.5c0.4,0.6,0.6,1.3,0.6,2.1 L15.6,17.7L15.6,17.7z M27.6,12.6c-0.8-1.1-2.1-1.7-3.4-1.7c-1.2,0-1.5,0.4-3,0.4s-1.7-0.4-3-0.4c-0.6,0-1.2,0.1-1.7,0.4 c0.7,0.7,0.8,1,0.9,1.2c0.3-0.1,0.5-0.1,0.8-0.1c1,0,1.3,0.4,3,0.4s2-0.4,3-0.4c0.9,0,1.8,0.4,2.2,1.1c0.3,0.5,0.5,1,0.5,1.6v1.6 c0,0.2-0.2,0.4-0.4,0.4h-8.2c0,0.8,0,1-0.1,1.4h8.2c1,0,1.8-0.8,1.8-1.8V15C28.4,14.1,28.1,13.3,27.6,12.6z"/> </svg>
+                    <span>conexões</span>
+                  </div>
+                  <div id="tabpanel5" role="tabpanel" aria-labelledby="tab5">
+                    <div class="conexoesWrapper">
+                      <div class="conexaoBlock">
+                        <span>ASSESSOR DE IMPRENSA</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>SECRETÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>ESTAGIÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>PRIMEIRO SUPLENTE</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </amp-selector>
+              </div>
+            </div>
+          </div>
+          <!-- ################################################################################# -->
+          <!-- bloco contato gov################################################################ -->
+          <!-- ################################################################################# -->
+
+
+
+
+
+
+
+
+          <!-- ################################################################################# -->
+          <!-- bloco contato gov################################################################ -->
+          <!-- ################################################################################# -->
+          <div class="profileContainer">
+            <div class="govProfileHeader">
+              <div>
+                <span>Cargo: <strong>Deputado Federal</strong></span>
+                <span>Orgão: <strong>Ministério da Saúde</strong></span>
+                <span>Cidade: <strong>São José do Rio Preto</strong></span>
+                <span>Estado: <strong>São Paulo</strong></span>
+              </div>
+            </div>
+            <div class="govProfileWrapper">
+              <button class="desbloquearBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30"xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"/></svg>
+                <span>Desbloquear Contato GOV</span>
+              </button>
+              <div class="profileImgWrapper">
+                <div class="profileImgMask">
+                  <amp-img alt="A view of the sea" src="profileImg1.jpg" width="300" height="300" layout="responsive"></amp-img>
+                </div>
+                <span class="profileImgNomeGov">Nome Sobrenome</span>
+                <span class="expiraText">Contato expira em 20 dias</span>
+              </div>
+              <div class="govProfileTabsWrapper">
+                <amp-selector class="tabs-with-flex" role="tablist">
+                  <div id="tab1" role="tab" aria-controls="tabpanel1" option selected>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24.8 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M8.7,9.9c2.7,0,5-2.2,5-5s-2.2-5-5-5c-2.7,0-5,2.2-5,5S5.9,9.9,8.7,9.9z M8.7,1.2c2.1,0,3.7,1.7,3.7,3.7 s-1.7,3.7-3.7,3.7S5,7,5,5C5,2.9,6.6,1.2,8.7,1.2z M24.4,14.1l-3.5-3.5c-0.5-0.5-1.1-0.7-1.8-0.7h-3.1c-0.7,0-1.2,0.6-1.2,1.2v3.1 c0,0.7,0.3,1.3,0.7,1.8l3.5,3.5c0.2,0.2,0.6,0.4,0.9,0.4s0.6-0.1,0.9-0.4l3.6-3.6C24.9,15.4,24.9,14.6,24.4,14.1L24.4,14.1z M20,18.6l-3.5-3.5c-0.2-0.2-0.4-0.5-0.4-0.9v-3.1h3.1c0.3,0,0.6,0.1,0.9,0.4l3.5,3.5L20,18.6z M18,12.4c-0.3,0-0.6,0.3-0.6,0.6 c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6C18.6,12.7,18.3,12.4,18,12.4z M15.5,18.6H1.9c-0.3,0-0.6-0.3-0.6-0.6v-1.6c0-2.2,1.8-4,4-4 C6,12.4,6.7,13,8.7,13c1.9,0,2.7-0.6,3.5-0.6c0.5,0,1,0.1,1.5,0.3v-1.3c-0.5-0.1-1-0.2-1.5-0.2c-1.1,0-1.6,0.6-3.5,0.6 s-2.4-0.6-3.5-0.6c-2.9,0-5.2,2.3-5.2,5.2V18c0,1,0.8,1.9,1.9,1.9h13.6c0.6,0,1.1-0.3,1.5-0.7l-0.9-0.9C16,18.4,15.8,18.6,15.5,18.6 L15.5,18.6z"/> </svg>
+                    <span>Dados pessoais</span>
+                  </div>
+                  <div id="tabpanel1" role="tabpanel" aria-labelledby="tab1">
+                    <div class="tabContent">
+                      <span>Nome Civil: <strong>Nome Sbrenome nome sobrenome</strong></span>
+                      <span>Partido: <strong>Bloco Parlamentar Senado Independente - PSB</strong></span>
+                      <span>Data de nascimento: <strong>30/09/1971</strong></span>
+                      <span>Naturalidade: <strong>Brasília - DF</strong></span>
+                      <span>Período: <strong>2019 - 2027</strong></span>
+                    </div>
+                  </div>
+                  <div id="tab2" role="tab" aria-controls="tabpanel2" option>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.4 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M16.9,6.2c0.3,0,0.5-0.2,0.5-0.5V4.2c0-0.3-0.2-0.5-0.5-0.5h-0.8V2.5C16.1,1.1,15,0,13.6,0H2.5 C1.1,0,0,1.1,0,2.5v14.9c0,1.4,1.1,2.5,2.5,2.5h11.2c1.4,0,2.5-1.1,2.5-2.5v-1.2h0.8c0.3,0,0.5-0.2,0.5-0.5v-1.6 c0-0.3-0.2-0.5-0.5-0.5h-0.8v-2.5h0.8c0.3,0,0.5-0.2,0.5-0.5V9.1c0-0.3-0.2-0.5-0.5-0.5h-0.8V6.2H16.9z M14.9,17.4 c0,0.7-0.6,1.2-1.2,1.2H2.5c-0.7,0-1.2-0.6-1.2-1.2V2.5c0-0.7,0.6-1.2,1.2-1.2h11.2c0.7,0,1.2,0.6,1.2,1.2V17.4z M8.1,10.5 c1.7,0,3.1-1.4,3.1-3.1S9.8,4.3,8.1,4.3S5,5.7,5,7.4S6.3,10.5,8.1,10.5z M8.1,5.6c1,0,1.9,0.8,1.9,1.9S9.1,9.3,8.1,9.3 S6.2,8.5,6.2,7.4S7,5.6,8.1,5.6z M9.9,11.2c-0.8,0-0.9,0.3-1.8,0.3S7,11.2,6.2,11.2c-0.8,0-1.6,0.4-2.1,1.1 c-0.3,0.4-0.4,0.9-0.4,1.5v1.5c0,0.2,0.1,0.3,0.3,0.3h0.6c0.2,0,0.3-0.1,0.3-0.3v-1.5c0-0.3,0.1-0.5,0.2-0.8 c0.2-0.3,0.6-0.5,1.1-0.5c0.5,0,0.8,0.3,1.8,0.3c1,0,1.3-0.3,1.8-0.3c0.4,0,0.8,0.2,1.1,0.5c0.2,0.2,0.2,0.5,0.2,0.8v1.5 c0,0.2,0.1,0.3,0.3,0.3h0.6c0.2,0,0.3-0.1,0.3-0.3v-1.5c0-0.5-0.2-1-0.4-1.5C11.5,11.5,10.7,11.2,9.9,11.2L9.9,11.2z"/> </svg>
+                    <span>Contatos</span>
+                  </div>
+                  <div id="tabpanel2" role="tabpanel" aria-labelledby="tab2">
+                    <div class="tabContent">
+                      <span>Telefone Principal: <strong>61 3452-0000</strong></span>
+                      <span>Telefone 2: <strong>61 3452-0000</strong></span>
+                      <span>Telefone 3: <strong>61 3452-0000</strong></span>
+                      <span>E-mail Principal: <strong>df.nomecompleto@senado.leg.br</strong></span>
+                      <span>E-mail 2: <strong>df.nomecompleto@senado.leg.br</strong></span>
+                    </div>
+                  </div>
+                  <div id="tab3" role="tab" aria-controls="tabpanel3" option>
+                    <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm193.2 152h-82.5c-9-44.4-24.1-82.2-43.2-109.1 55 18.2 100.2 57.9 125.7 109.1zM336 256c0 22.9-1.6 44.2-4.3 64H164.3c-2.7-19.8-4.3-41.1-4.3-64s1.6-44.2 4.3-64h167.4c2.7 19.8 4.3 41.1 4.3 64zM248 40c26.9 0 61.4 44.1 78.1 120H169.9C186.6 84.1 221.1 40 248 40zm-67.5 10.9c-19 26.8-34.2 64.6-43.2 109.1H54.8c25.5-51.2 70.7-90.9 125.7-109.1zM32 256c0-22.3 3.4-43.8 9.7-64h90.5c-2.6 20.5-4.2 41.8-4.2 64s1.5 43.5 4.2 64H41.7c-6.3-20.2-9.7-41.7-9.7-64zm22.8 96h82.5c9 44.4 24.1 82.2 43.2 109.1-55-18.2-100.2-57.9-125.7-109.1zM248 472c-26.9 0-61.4-44.1-78.1-120h156.2c-16.7 75.9-51.2 120-78.1 120zm67.5-10.9c19-26.8 34.2-64.6 43.2-109.1h82.5c-25.5 51.2-70.7 90.9-125.7 109.1zM363.8 320c2.6-20.5 4.2-41.8 4.2-64s-1.5-43.5-4.2-64h90.5c6.3 20.2 9.7 41.7 9.7 64s-3.4 43.8-9.7 64h-90.5z"></path></svg>
+                    <span>Redes sociais</span>
+                  </div>
+                  <div id="tabpanel3" role="tabpanel" aria-labelledby="tab3">
+                    <div class="tabContent">
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div id="tab4" role="tab" aria-controls="tabpanel4" option>
+                    <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                    <span>Endereços</span>
+                  </div>
+                  <div id="tabpanel4" role="tabpanel" aria-labelledby="tab4">
+                    <div class="enderecoContainer">
+                      <div class="enderecoTitleWrapper">
+                      <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                      <span>Gabinete</span>
+                      </div>
+                      <div class="enderecoData">
+                        <!-- <span>Nome: <strong>Gabinete</strong></span> -->
+                        <span>Endereço: <strong>Senado Federal</strong></span>
+                        <span>Complemento: <strong>Anexo 2 Ala Teotônio Vilela Gabinete 11</strong></span>
+                        <span>Cidade: <strong>Brasília</strong></span>
+                        <span>UF: <strong>Distrito Federal</strong></span>
+                      </div>
+                    </div>
+                    <div class="enderecoContainer">
+                      <div class="enderecoTitleWrapper">
+                      <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                      <span>Escritório de Apoio</span>
+                      </div>
+                      <div class="enderecoData">
+                        <!-- <span>Nome: <strong>Gabinete</strong></span> -->
+                        <span>Endereço: <strong>Quadra SDS. Ed. Eldorado</strong></span>
+                        <span>Complemento: <strong>BLOCO "D", N. 60, SALA 315</strong></span>
+                        <span>Cidade: <strong>Brasília</strong></span>
+                        <span>UF: <strong>Distrito Federal</strong></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab5" role="tab" aria-controls="tabpanel5" option>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28.4 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M21.3,9.9c2.3,0,4.3-1.9,4.3-4.3s-1.9-4.3-4.3-4.3S17,3.3,17,5.7S18.9,9.9,21.3,9.9z M21.3,2.8 c1.6,0,2.8,1.3,2.8,2.8s-1.3,2.8-2.8,2.8s-2.8-1.3-2.8-2.8S19.7,2.8,21.3,2.8z M8.5,9.9c2.7,0,5-2.2,5-5s-2.2-5-5-5s-5,2.2-5,5 S5.8,9.9,8.5,9.9z M8.5,1.4C10.5,1.4,12,3,12,5s-1.6,3.5-3.5,3.5S5,6.9,5,5S6.6,1.4,8.5,1.4z M12.1,10.8c-1.5,0-1.8,0.5-3.5,0.5 S6.4,10.8,5,10.8c-1.6,0-3.2,0.7-4.1,2.1C0.3,13.7,0,14.7,0,15.7v2c0,1.2,1,2.1,2.1,2.1h12.8c1.2,0,2.1-1,2.1-2.1v-2 c0-1.1-0.3-2-0.9-2.8C15.2,11.5,13.7,10.8,12.1,10.8L12.1,10.8z M15.6,17.7c0,0.4-0.3,0.7-0.7,0.7H2.1c-0.4,0-0.7-0.3-0.7-0.7v-2 c0-0.7,0.2-1.4,0.6-2.1c0.6-0.9,1.7-1.5,2.9-1.5c1.2,0,1.6,0.5,3.6,0.5s2.3-0.5,3.5-0.5s2.3,0.5,2.9,1.5c0.4,0.6,0.6,1.3,0.6,2.1 L15.6,17.7L15.6,17.7z M27.6,12.6c-0.8-1.1-2.1-1.7-3.4-1.7c-1.2,0-1.5,0.4-3,0.4s-1.7-0.4-3-0.4c-0.6,0-1.2,0.1-1.7,0.4 c0.7,0.7,0.8,1,0.9,1.2c0.3-0.1,0.5-0.1,0.8-0.1c1,0,1.3,0.4,3,0.4s2-0.4,3-0.4c0.9,0,1.8,0.4,2.2,1.1c0.3,0.5,0.5,1,0.5,1.6v1.6 c0,0.2-0.2,0.4-0.4,0.4h-8.2c0,0.8,0,1-0.1,1.4h8.2c1,0,1.8-0.8,1.8-1.8V15C28.4,14.1,28.1,13.3,27.6,12.6z"/> </svg>
+                    <span>conexões</span>
+                  </div>
+                  <div id="tabpanel5" role="tabpanel" aria-labelledby="tab5">
+                    <div class="conexoesWrapper">
+                      <div class="conexaoBlock">
+                        <span>ASSESSOR DE IMPRENSA</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>SECRETÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>ESTAGIÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>PRIMEIRO SUPLENTE</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </amp-selector>
+              </div>
+            </div>
+          </div>
+          <!-- ################################################################################# -->
+          <!-- bloco contato gov################################################################ -->
+          <!-- ################################################################################# -->
+
+
+
+
+
+
+
+
+          <!-- ################################################################################# -->
+          <!-- bloco contato gov################################################################ -->
+          <!-- ################################################################################# -->
+          <div class="profileContainer">
+            <div class="govProfileHeader">
+              <div>
+                <span>Cargo: <strong>Deputado Federal</strong></span>
+                <span>Orgão: <strong>Ministério da Saúde</strong></span>
+                <span>Cidade: <strong>São José do Rio Preto</strong></span>
+                <span>Estado: <strong>São Paulo</strong></span>
+              </div>
+            </div>
+            <div class="govProfileWrapper">
+              <button class="desbloquearBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30"xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"/></svg>
+                <span>Desbloquear Contato GOV</span>
+              </button>
+              <div class="profileImgWrapper">
+                <div class="profileImgMask">
+                  <amp-img alt="A view of the sea" src="profileImg1.jpg" width="300" height="300" layout="responsive"></amp-img>
+                </div>
+                <span class="profileImgNomeGov">Nome Sobrenome</span>
+                <span class="expiraText">Contato expira em 20 dias</span>
+              </div>
+              <div class="govProfileTabsWrapper">
+                <amp-selector class="tabs-with-flex" role="tablist">
+                  <div id="tab1" role="tab" aria-controls="tabpanel1" option selected>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24.8 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M8.7,9.9c2.7,0,5-2.2,5-5s-2.2-5-5-5c-2.7,0-5,2.2-5,5S5.9,9.9,8.7,9.9z M8.7,1.2c2.1,0,3.7,1.7,3.7,3.7 s-1.7,3.7-3.7,3.7S5,7,5,5C5,2.9,6.6,1.2,8.7,1.2z M24.4,14.1l-3.5-3.5c-0.5-0.5-1.1-0.7-1.8-0.7h-3.1c-0.7,0-1.2,0.6-1.2,1.2v3.1 c0,0.7,0.3,1.3,0.7,1.8l3.5,3.5c0.2,0.2,0.6,0.4,0.9,0.4s0.6-0.1,0.9-0.4l3.6-3.6C24.9,15.4,24.9,14.6,24.4,14.1L24.4,14.1z M20,18.6l-3.5-3.5c-0.2-0.2-0.4-0.5-0.4-0.9v-3.1h3.1c0.3,0,0.6,0.1,0.9,0.4l3.5,3.5L20,18.6z M18,12.4c-0.3,0-0.6,0.3-0.6,0.6 c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6C18.6,12.7,18.3,12.4,18,12.4z M15.5,18.6H1.9c-0.3,0-0.6-0.3-0.6-0.6v-1.6c0-2.2,1.8-4,4-4 C6,12.4,6.7,13,8.7,13c1.9,0,2.7-0.6,3.5-0.6c0.5,0,1,0.1,1.5,0.3v-1.3c-0.5-0.1-1-0.2-1.5-0.2c-1.1,0-1.6,0.6-3.5,0.6 s-2.4-0.6-3.5-0.6c-2.9,0-5.2,2.3-5.2,5.2V18c0,1,0.8,1.9,1.9,1.9h13.6c0.6,0,1.1-0.3,1.5-0.7l-0.9-0.9C16,18.4,15.8,18.6,15.5,18.6 L15.5,18.6z"/> </svg>
+                    <span>Dados pessoais</span>
+                  </div>
+                  <div id="tabpanel1" role="tabpanel" aria-labelledby="tab1">
+                    <div class="tabContent">
+                      <span>Nome Civil: <strong>Nome Sbrenome nome sobrenome</strong></span>
+                      <span>Partido: <strong>Bloco Parlamentar Senado Independente - PSB</strong></span>
+                      <span>Data de nascimento: <strong>30/09/1971</strong></span>
+                      <span>Naturalidade: <strong>Brasília - DF</strong></span>
+                      <span>Período: <strong>2019 - 2027</strong></span>
+                    </div>
+                  </div>
+                  <div id="tab2" role="tab" aria-controls="tabpanel2" option>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.4 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M16.9,6.2c0.3,0,0.5-0.2,0.5-0.5V4.2c0-0.3-0.2-0.5-0.5-0.5h-0.8V2.5C16.1,1.1,15,0,13.6,0H2.5 C1.1,0,0,1.1,0,2.5v14.9c0,1.4,1.1,2.5,2.5,2.5h11.2c1.4,0,2.5-1.1,2.5-2.5v-1.2h0.8c0.3,0,0.5-0.2,0.5-0.5v-1.6 c0-0.3-0.2-0.5-0.5-0.5h-0.8v-2.5h0.8c0.3,0,0.5-0.2,0.5-0.5V9.1c0-0.3-0.2-0.5-0.5-0.5h-0.8V6.2H16.9z M14.9,17.4 c0,0.7-0.6,1.2-1.2,1.2H2.5c-0.7,0-1.2-0.6-1.2-1.2V2.5c0-0.7,0.6-1.2,1.2-1.2h11.2c0.7,0,1.2,0.6,1.2,1.2V17.4z M8.1,10.5 c1.7,0,3.1-1.4,3.1-3.1S9.8,4.3,8.1,4.3S5,5.7,5,7.4S6.3,10.5,8.1,10.5z M8.1,5.6c1,0,1.9,0.8,1.9,1.9S9.1,9.3,8.1,9.3 S6.2,8.5,6.2,7.4S7,5.6,8.1,5.6z M9.9,11.2c-0.8,0-0.9,0.3-1.8,0.3S7,11.2,6.2,11.2c-0.8,0-1.6,0.4-2.1,1.1 c-0.3,0.4-0.4,0.9-0.4,1.5v1.5c0,0.2,0.1,0.3,0.3,0.3h0.6c0.2,0,0.3-0.1,0.3-0.3v-1.5c0-0.3,0.1-0.5,0.2-0.8 c0.2-0.3,0.6-0.5,1.1-0.5c0.5,0,0.8,0.3,1.8,0.3c1,0,1.3-0.3,1.8-0.3c0.4,0,0.8,0.2,1.1,0.5c0.2,0.2,0.2,0.5,0.2,0.8v1.5 c0,0.2,0.1,0.3,0.3,0.3h0.6c0.2,0,0.3-0.1,0.3-0.3v-1.5c0-0.5-0.2-1-0.4-1.5C11.5,11.5,10.7,11.2,9.9,11.2L9.9,11.2z"/> </svg>
+                    <span>Contatos</span>
+                  </div>
+                  <div id="tabpanel2" role="tabpanel" aria-labelledby="tab2">
+                    <div class="tabContent">
+                      <span>Telefone Principal: <strong>61 3452-0000</strong></span>
+                      <span>Telefone 2: <strong>61 3452-0000</strong></span>
+                      <span>Telefone 3: <strong>61 3452-0000</strong></span>
+                      <span>E-mail Principal: <strong>df.nomecompleto@senado.leg.br</strong></span>
+                      <span>E-mail 2: <strong>df.nomecompleto@senado.leg.br</strong></span>
+                    </div>
+                  </div>
+                  <div id="tab3" role="tab" aria-controls="tabpanel3" option>
+                    <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm193.2 152h-82.5c-9-44.4-24.1-82.2-43.2-109.1 55 18.2 100.2 57.9 125.7 109.1zM336 256c0 22.9-1.6 44.2-4.3 64H164.3c-2.7-19.8-4.3-41.1-4.3-64s1.6-44.2 4.3-64h167.4c2.7 19.8 4.3 41.1 4.3 64zM248 40c26.9 0 61.4 44.1 78.1 120H169.9C186.6 84.1 221.1 40 248 40zm-67.5 10.9c-19 26.8-34.2 64.6-43.2 109.1H54.8c25.5-51.2 70.7-90.9 125.7-109.1zM32 256c0-22.3 3.4-43.8 9.7-64h90.5c-2.6 20.5-4.2 41.8-4.2 64s1.5 43.5 4.2 64H41.7c-6.3-20.2-9.7-41.7-9.7-64zm22.8 96h82.5c9 44.4 24.1 82.2 43.2 109.1-55-18.2-100.2-57.9-125.7-109.1zM248 472c-26.9 0-61.4-44.1-78.1-120h156.2c-16.7 75.9-51.2 120-78.1 120zm67.5-10.9c19-26.8 34.2-64.6 43.2-109.1h82.5c-25.5 51.2-70.7 90.9-125.7 109.1zM363.8 320c2.6-20.5 4.2-41.8 4.2-64s-1.5-43.5-4.2-64h90.5c6.3 20.2 9.7 41.7 9.7 64s-3.4 43.8-9.7 64h-90.5z"></path></svg>
+                    <span>Redes sociais</span>
+                  </div>
+                  <div id="tabpanel3" role="tabpanel" aria-labelledby="tab3">
+                    <div class="tabContent">
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div id="tab4" role="tab" aria-controls="tabpanel4" option>
+                    <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                    <span>Endereços</span>
+                  </div>
+                  <div id="tabpanel4" role="tabpanel" aria-labelledby="tab4">
+                    <div class="enderecoContainer">
+                      <div class="enderecoTitleWrapper">
+                      <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                      <span>Gabinete</span>
+                      </div>
+                      <div class="enderecoData">
+                        <!-- <span>Nome: <strong>Gabinete</strong></span> -->
+                        <span>Endereço: <strong>Senado Federal</strong></span>
+                        <span>Complemento: <strong>Anexo 2 Ala Teotônio Vilela Gabinete 11</strong></span>
+                        <span>Cidade: <strong>Brasília</strong></span>
+                        <span>UF: <strong>Distrito Federal</strong></span>
+                      </div>
+                    </div>
+                    <div class="enderecoContainer">
+                      <div class="enderecoTitleWrapper">
+                      <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                      <span>Escritório de Apoio</span>
+                      </div>
+                      <div class="enderecoData">
+                        <!-- <span>Nome: <strong>Gabinete</strong></span> -->
+                        <span>Endereço: <strong>Quadra SDS. Ed. Eldorado</strong></span>
+                        <span>Complemento: <strong>BLOCO "D", N. 60, SALA 315</strong></span>
+                        <span>Cidade: <strong>Brasília</strong></span>
+                        <span>UF: <strong>Distrito Federal</strong></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab5" role="tab" aria-controls="tabpanel5" option>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28.4 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M21.3,9.9c2.3,0,4.3-1.9,4.3-4.3s-1.9-4.3-4.3-4.3S17,3.3,17,5.7S18.9,9.9,21.3,9.9z M21.3,2.8 c1.6,0,2.8,1.3,2.8,2.8s-1.3,2.8-2.8,2.8s-2.8-1.3-2.8-2.8S19.7,2.8,21.3,2.8z M8.5,9.9c2.7,0,5-2.2,5-5s-2.2-5-5-5s-5,2.2-5,5 S5.8,9.9,8.5,9.9z M8.5,1.4C10.5,1.4,12,3,12,5s-1.6,3.5-3.5,3.5S5,6.9,5,5S6.6,1.4,8.5,1.4z M12.1,10.8c-1.5,0-1.8,0.5-3.5,0.5 S6.4,10.8,5,10.8c-1.6,0-3.2,0.7-4.1,2.1C0.3,13.7,0,14.7,0,15.7v2c0,1.2,1,2.1,2.1,2.1h12.8c1.2,0,2.1-1,2.1-2.1v-2 c0-1.1-0.3-2-0.9-2.8C15.2,11.5,13.7,10.8,12.1,10.8L12.1,10.8z M15.6,17.7c0,0.4-0.3,0.7-0.7,0.7H2.1c-0.4,0-0.7-0.3-0.7-0.7v-2 c0-0.7,0.2-1.4,0.6-2.1c0.6-0.9,1.7-1.5,2.9-1.5c1.2,0,1.6,0.5,3.6,0.5s2.3-0.5,3.5-0.5s2.3,0.5,2.9,1.5c0.4,0.6,0.6,1.3,0.6,2.1 L15.6,17.7L15.6,17.7z M27.6,12.6c-0.8-1.1-2.1-1.7-3.4-1.7c-1.2,0-1.5,0.4-3,0.4s-1.7-0.4-3-0.4c-0.6,0-1.2,0.1-1.7,0.4 c0.7,0.7,0.8,1,0.9,1.2c0.3-0.1,0.5-0.1,0.8-0.1c1,0,1.3,0.4,3,0.4s2-0.4,3-0.4c0.9,0,1.8,0.4,2.2,1.1c0.3,0.5,0.5,1,0.5,1.6v1.6 c0,0.2-0.2,0.4-0.4,0.4h-8.2c0,0.8,0,1-0.1,1.4h8.2c1,0,1.8-0.8,1.8-1.8V15C28.4,14.1,28.1,13.3,27.6,12.6z"/> </svg>
+                    <span>conexões</span>
+                  </div>
+                  <div id="tabpanel5" role="tabpanel" aria-labelledby="tab5">
+                    <div class="conexoesWrapper">
+                      <div class="conexaoBlock">
+                        <span>ASSESSOR DE IMPRENSA</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>SECRETÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>ESTAGIÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>PRIMEIRO SUPLENTE</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </amp-selector>
+              </div>
+            </div>
+          </div>
+          <!-- ################################################################################# -->
+          <!-- bloco contato gov################################################################ -->
+          <!-- ################################################################################# -->
+
+
+
+
+
+
+
+
+          <!-- ################################################################################# -->
+          <!-- bloco contato gov################################################################ -->
+          <!-- ################################################################################# -->
+          <div class="profileContainer">
+            <div class="govProfileHeader">
+              <div>
+                <span>Cargo: <strong>Deputado Federal</strong></span>
+                <span>Orgão: <strong>Ministério da Saúde</strong></span>
+                <span>Cidade: <strong>São José do Rio Preto</strong></span>
+                <span>Estado: <strong>São Paulo</strong></span>
+              </div>
+            </div>
+            <div class="govProfileWrapper">
+              <button class="desbloquearBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30"xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"/></svg>
+                <span>Desbloquear Contato GOV</span>
+              </button>
+              <div class="profileImgWrapper">
+                <div class="profileImgMask">
+                  <amp-img alt="A view of the sea" src="profileImg1.jpg" width="300" height="300" layout="responsive"></amp-img>
+                </div>
+                <span class="profileImgNomeGov">Nome Sobrenome</span>
+                <span class="expiraText">Contato expira em 20 dias</span>
+              </div>
+              <div class="govProfileTabsWrapper">
+                <amp-selector class="tabs-with-flex" role="tablist">
+                  <div id="tab1" role="tab" aria-controls="tabpanel1" option selected>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24.8 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M8.7,9.9c2.7,0,5-2.2,5-5s-2.2-5-5-5c-2.7,0-5,2.2-5,5S5.9,9.9,8.7,9.9z M8.7,1.2c2.1,0,3.7,1.7,3.7,3.7 s-1.7,3.7-3.7,3.7S5,7,5,5C5,2.9,6.6,1.2,8.7,1.2z M24.4,14.1l-3.5-3.5c-0.5-0.5-1.1-0.7-1.8-0.7h-3.1c-0.7,0-1.2,0.6-1.2,1.2v3.1 c0,0.7,0.3,1.3,0.7,1.8l3.5,3.5c0.2,0.2,0.6,0.4,0.9,0.4s0.6-0.1,0.9-0.4l3.6-3.6C24.9,15.4,24.9,14.6,24.4,14.1L24.4,14.1z M20,18.6l-3.5-3.5c-0.2-0.2-0.4-0.5-0.4-0.9v-3.1h3.1c0.3,0,0.6,0.1,0.9,0.4l3.5,3.5L20,18.6z M18,12.4c-0.3,0-0.6,0.3-0.6,0.6 c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6C18.6,12.7,18.3,12.4,18,12.4z M15.5,18.6H1.9c-0.3,0-0.6-0.3-0.6-0.6v-1.6c0-2.2,1.8-4,4-4 C6,12.4,6.7,13,8.7,13c1.9,0,2.7-0.6,3.5-0.6c0.5,0,1,0.1,1.5,0.3v-1.3c-0.5-0.1-1-0.2-1.5-0.2c-1.1,0-1.6,0.6-3.5,0.6 s-2.4-0.6-3.5-0.6c-2.9,0-5.2,2.3-5.2,5.2V18c0,1,0.8,1.9,1.9,1.9h13.6c0.6,0,1.1-0.3,1.5-0.7l-0.9-0.9C16,18.4,15.8,18.6,15.5,18.6 L15.5,18.6z"/> </svg>
+                    <span>Dados pessoais</span>
+                  </div>
+                  <div id="tabpanel1" role="tabpanel" aria-labelledby="tab1">
+                    <div class="tabContent">
+                      <span>Nome Civil: <strong>Nome Sbrenome nome sobrenome</strong></span>
+                      <span>Partido: <strong>Bloco Parlamentar Senado Independente - PSB</strong></span>
+                      <span>Data de nascimento: <strong>30/09/1971</strong></span>
+                      <span>Naturalidade: <strong>Brasília - DF</strong></span>
+                      <span>Período: <strong>2019 - 2027</strong></span>
+                    </div>
+                  </div>
+                  <div id="tab2" role="tab" aria-controls="tabpanel2" option>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.4 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M16.9,6.2c0.3,0,0.5-0.2,0.5-0.5V4.2c0-0.3-0.2-0.5-0.5-0.5h-0.8V2.5C16.1,1.1,15,0,13.6,0H2.5 C1.1,0,0,1.1,0,2.5v14.9c0,1.4,1.1,2.5,2.5,2.5h11.2c1.4,0,2.5-1.1,2.5-2.5v-1.2h0.8c0.3,0,0.5-0.2,0.5-0.5v-1.6 c0-0.3-0.2-0.5-0.5-0.5h-0.8v-2.5h0.8c0.3,0,0.5-0.2,0.5-0.5V9.1c0-0.3-0.2-0.5-0.5-0.5h-0.8V6.2H16.9z M14.9,17.4 c0,0.7-0.6,1.2-1.2,1.2H2.5c-0.7,0-1.2-0.6-1.2-1.2V2.5c0-0.7,0.6-1.2,1.2-1.2h11.2c0.7,0,1.2,0.6,1.2,1.2V17.4z M8.1,10.5 c1.7,0,3.1-1.4,3.1-3.1S9.8,4.3,8.1,4.3S5,5.7,5,7.4S6.3,10.5,8.1,10.5z M8.1,5.6c1,0,1.9,0.8,1.9,1.9S9.1,9.3,8.1,9.3 S6.2,8.5,6.2,7.4S7,5.6,8.1,5.6z M9.9,11.2c-0.8,0-0.9,0.3-1.8,0.3S7,11.2,6.2,11.2c-0.8,0-1.6,0.4-2.1,1.1 c-0.3,0.4-0.4,0.9-0.4,1.5v1.5c0,0.2,0.1,0.3,0.3,0.3h0.6c0.2,0,0.3-0.1,0.3-0.3v-1.5c0-0.3,0.1-0.5,0.2-0.8 c0.2-0.3,0.6-0.5,1.1-0.5c0.5,0,0.8,0.3,1.8,0.3c1,0,1.3-0.3,1.8-0.3c0.4,0,0.8,0.2,1.1,0.5c0.2,0.2,0.2,0.5,0.2,0.8v1.5 c0,0.2,0.1,0.3,0.3,0.3h0.6c0.2,0,0.3-0.1,0.3-0.3v-1.5c0-0.5-0.2-1-0.4-1.5C11.5,11.5,10.7,11.2,9.9,11.2L9.9,11.2z"/> </svg>
+                    <span>Contatos</span>
+                  </div>
+                  <div id="tabpanel2" role="tabpanel" aria-labelledby="tab2">
+                    <div class="tabContent">
+                      <span>Telefone Principal: <strong>61 3452-0000</strong></span>
+                      <span>Telefone 2: <strong>61 3452-0000</strong></span>
+                      <span>Telefone 3: <strong>61 3452-0000</strong></span>
+                      <span>E-mail Principal: <strong>df.nomecompleto@senado.leg.br</strong></span>
+                      <span>E-mail 2: <strong>df.nomecompleto@senado.leg.br</strong></span>
+                    </div>
+                  </div>
+                  <div id="tab3" role="tab" aria-controls="tabpanel3" option>
+                    <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm193.2 152h-82.5c-9-44.4-24.1-82.2-43.2-109.1 55 18.2 100.2 57.9 125.7 109.1zM336 256c0 22.9-1.6 44.2-4.3 64H164.3c-2.7-19.8-4.3-41.1-4.3-64s1.6-44.2 4.3-64h167.4c2.7 19.8 4.3 41.1 4.3 64zM248 40c26.9 0 61.4 44.1 78.1 120H169.9C186.6 84.1 221.1 40 248 40zm-67.5 10.9c-19 26.8-34.2 64.6-43.2 109.1H54.8c25.5-51.2 70.7-90.9 125.7-109.1zM32 256c0-22.3 3.4-43.8 9.7-64h90.5c-2.6 20.5-4.2 41.8-4.2 64s1.5 43.5 4.2 64H41.7c-6.3-20.2-9.7-41.7-9.7-64zm22.8 96h82.5c9 44.4 24.1 82.2 43.2 109.1-55-18.2-100.2-57.9-125.7-109.1zM248 472c-26.9 0-61.4-44.1-78.1-120h156.2c-16.7 75.9-51.2 120-78.1 120zm67.5-10.9c19-26.8 34.2-64.6 43.2-109.1h82.5c-25.5 51.2-70.7 90.9-125.7 109.1zM363.8 320c2.6-20.5 4.2-41.8 4.2-64s-1.5-43.5-4.2-64h90.5c6.3 20.2 9.7 41.7 9.7 64s-3.4 43.8-9.7 64h-90.5z"></path></svg>
+                    <span>Redes sociais</span>
+                  </div>
+                  <div id="tabpanel3" role="tabpanel" aria-labelledby="tab3">
+                    <div class="tabContent">
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div id="tab4" role="tab" aria-controls="tabpanel4" option>
+                    <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                    <span>Endereços</span>
+                  </div>
+                  <div id="tabpanel4" role="tabpanel" aria-labelledby="tab4">
+                    <div class="enderecoContainer">
+                      <div class="enderecoTitleWrapper">
+                      <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                      <span>Gabinete</span>
+                      </div>
+                      <div class="enderecoData">
+                        <!-- <span>Nome: <strong>Gabinete</strong></span> -->
+                        <span>Endereço: <strong>Senado Federal</strong></span>
+                        <span>Complemento: <strong>Anexo 2 Ala Teotônio Vilela Gabinete 11</strong></span>
+                        <span>Cidade: <strong>Brasília</strong></span>
+                        <span>UF: <strong>Distrito Federal</strong></span>
+                      </div>
+                    </div>
+                    <div class="enderecoContainer">
+                      <div class="enderecoTitleWrapper">
+                      <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                      <span>Escritório de Apoio</span>
+                      </div>
+                      <div class="enderecoData">
+                        <!-- <span>Nome: <strong>Gabinete</strong></span> -->
+                        <span>Endereço: <strong>Quadra SDS. Ed. Eldorado</strong></span>
+                        <span>Complemento: <strong>BLOCO "D", N. 60, SALA 315</strong></span>
+                        <span>Cidade: <strong>Brasília</strong></span>
+                        <span>UF: <strong>Distrito Federal</strong></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab5" role="tab" aria-controls="tabpanel5" option>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28.4 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M21.3,9.9c2.3,0,4.3-1.9,4.3-4.3s-1.9-4.3-4.3-4.3S17,3.3,17,5.7S18.9,9.9,21.3,9.9z M21.3,2.8 c1.6,0,2.8,1.3,2.8,2.8s-1.3,2.8-2.8,2.8s-2.8-1.3-2.8-2.8S19.7,2.8,21.3,2.8z M8.5,9.9c2.7,0,5-2.2,5-5s-2.2-5-5-5s-5,2.2-5,5 S5.8,9.9,8.5,9.9z M8.5,1.4C10.5,1.4,12,3,12,5s-1.6,3.5-3.5,3.5S5,6.9,5,5S6.6,1.4,8.5,1.4z M12.1,10.8c-1.5,0-1.8,0.5-3.5,0.5 S6.4,10.8,5,10.8c-1.6,0-3.2,0.7-4.1,2.1C0.3,13.7,0,14.7,0,15.7v2c0,1.2,1,2.1,2.1,2.1h12.8c1.2,0,2.1-1,2.1-2.1v-2 c0-1.1-0.3-2-0.9-2.8C15.2,11.5,13.7,10.8,12.1,10.8L12.1,10.8z M15.6,17.7c0,0.4-0.3,0.7-0.7,0.7H2.1c-0.4,0-0.7-0.3-0.7-0.7v-2 c0-0.7,0.2-1.4,0.6-2.1c0.6-0.9,1.7-1.5,2.9-1.5c1.2,0,1.6,0.5,3.6,0.5s2.3-0.5,3.5-0.5s2.3,0.5,2.9,1.5c0.4,0.6,0.6,1.3,0.6,2.1 L15.6,17.7L15.6,17.7z M27.6,12.6c-0.8-1.1-2.1-1.7-3.4-1.7c-1.2,0-1.5,0.4-3,0.4s-1.7-0.4-3-0.4c-0.6,0-1.2,0.1-1.7,0.4 c0.7,0.7,0.8,1,0.9,1.2c0.3-0.1,0.5-0.1,0.8-0.1c1,0,1.3,0.4,3,0.4s2-0.4,3-0.4c0.9,0,1.8,0.4,2.2,1.1c0.3,0.5,0.5,1,0.5,1.6v1.6 c0,0.2-0.2,0.4-0.4,0.4h-8.2c0,0.8,0,1-0.1,1.4h8.2c1,0,1.8-0.8,1.8-1.8V15C28.4,14.1,28.1,13.3,27.6,12.6z"/> </svg>
+                    <span>conexões</span>
+                  </div>
+                  <div id="tabpanel5" role="tabpanel" aria-labelledby="tab5">
+                    <div class="conexoesWrapper">
+                      <div class="conexaoBlock">
+                        <span>ASSESSOR DE IMPRENSA</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>SECRETÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>ESTAGIÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>PRIMEIRO SUPLENTE</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </amp-selector>
+              </div>
+            </div>
+          </div>
+          <!-- ################################################################################# -->
+          <!-- bloco contato gov################################################################ -->
+          <!-- ################################################################################# -->
+
+
+
+
+
+
+
+
+          <!-- ################################################################################# -->
+          <!-- bloco contato gov################################################################ -->
+          <!-- ################################################################################# -->
+          <div class="profileContainer">
+            <div class="govProfileHeader">
+              <div>
+                <span>Cargo: <strong>Deputado Federal</strong></span>
+                <span>Orgão: <strong>Ministério da Saúde</strong></span>
+                <span>Cidade: <strong>São José do Rio Preto</strong></span>
+                <span>Estado: <strong>São Paulo</strong></span>
+              </div>
+            </div>
+            <div class="govProfileWrapper">
+              <button class="desbloquearBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30"xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"/></svg>
+                <span>Desbloquear Contato GOV</span>
+              </button>
+              <div class="profileImgWrapper">
+                <div class="profileImgMask">
+                  <amp-img alt="A view of the sea" src="profileImg1.jpg" width="300" height="300" layout="responsive"></amp-img>
+                </div>
+                <span class="profileImgNomeGov">Nome Sobrenome</span>
+                <span class="expiraText">Contato expira em 20 dias</span>
+              </div>
+              <div class="govProfileTabsWrapper">
+                <amp-selector class="tabs-with-flex" role="tablist">
+                  <div id="tab1" role="tab" aria-controls="tabpanel1" option selected>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24.8 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M8.7,9.9c2.7,0,5-2.2,5-5s-2.2-5-5-5c-2.7,0-5,2.2-5,5S5.9,9.9,8.7,9.9z M8.7,1.2c2.1,0,3.7,1.7,3.7,3.7 s-1.7,3.7-3.7,3.7S5,7,5,5C5,2.9,6.6,1.2,8.7,1.2z M24.4,14.1l-3.5-3.5c-0.5-0.5-1.1-0.7-1.8-0.7h-3.1c-0.7,0-1.2,0.6-1.2,1.2v3.1 c0,0.7,0.3,1.3,0.7,1.8l3.5,3.5c0.2,0.2,0.6,0.4,0.9,0.4s0.6-0.1,0.9-0.4l3.6-3.6C24.9,15.4,24.9,14.6,24.4,14.1L24.4,14.1z M20,18.6l-3.5-3.5c-0.2-0.2-0.4-0.5-0.4-0.9v-3.1h3.1c0.3,0,0.6,0.1,0.9,0.4l3.5,3.5L20,18.6z M18,12.4c-0.3,0-0.6,0.3-0.6,0.6 c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6C18.6,12.7,18.3,12.4,18,12.4z M15.5,18.6H1.9c-0.3,0-0.6-0.3-0.6-0.6v-1.6c0-2.2,1.8-4,4-4 C6,12.4,6.7,13,8.7,13c1.9,0,2.7-0.6,3.5-0.6c0.5,0,1,0.1,1.5,0.3v-1.3c-0.5-0.1-1-0.2-1.5-0.2c-1.1,0-1.6,0.6-3.5,0.6 s-2.4-0.6-3.5-0.6c-2.9,0-5.2,2.3-5.2,5.2V18c0,1,0.8,1.9,1.9,1.9h13.6c0.6,0,1.1-0.3,1.5-0.7l-0.9-0.9C16,18.4,15.8,18.6,15.5,18.6 L15.5,18.6z"/> </svg>
+                    <span>Dados pessoais</span>
+                  </div>
+                  <div id="tabpanel1" role="tabpanel" aria-labelledby="tab1">
+                    <div class="tabContent">
+                      <span>Nome Civil: <strong>Nome Sbrenome nome sobrenome</strong></span>
+                      <span>Partido: <strong>Bloco Parlamentar Senado Independente - PSB</strong></span>
+                      <span>Data de nascimento: <strong>30/09/1971</strong></span>
+                      <span>Naturalidade: <strong>Brasília - DF</strong></span>
+                      <span>Período: <strong>2019 - 2027</strong></span>
+                    </div>
+                  </div>
+                  <div id="tab2" role="tab" aria-controls="tabpanel2" option>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.4 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M16.9,6.2c0.3,0,0.5-0.2,0.5-0.5V4.2c0-0.3-0.2-0.5-0.5-0.5h-0.8V2.5C16.1,1.1,15,0,13.6,0H2.5 C1.1,0,0,1.1,0,2.5v14.9c0,1.4,1.1,2.5,2.5,2.5h11.2c1.4,0,2.5-1.1,2.5-2.5v-1.2h0.8c0.3,0,0.5-0.2,0.5-0.5v-1.6 c0-0.3-0.2-0.5-0.5-0.5h-0.8v-2.5h0.8c0.3,0,0.5-0.2,0.5-0.5V9.1c0-0.3-0.2-0.5-0.5-0.5h-0.8V6.2H16.9z M14.9,17.4 c0,0.7-0.6,1.2-1.2,1.2H2.5c-0.7,0-1.2-0.6-1.2-1.2V2.5c0-0.7,0.6-1.2,1.2-1.2h11.2c0.7,0,1.2,0.6,1.2,1.2V17.4z M8.1,10.5 c1.7,0,3.1-1.4,3.1-3.1S9.8,4.3,8.1,4.3S5,5.7,5,7.4S6.3,10.5,8.1,10.5z M8.1,5.6c1,0,1.9,0.8,1.9,1.9S9.1,9.3,8.1,9.3 S6.2,8.5,6.2,7.4S7,5.6,8.1,5.6z M9.9,11.2c-0.8,0-0.9,0.3-1.8,0.3S7,11.2,6.2,11.2c-0.8,0-1.6,0.4-2.1,1.1 c-0.3,0.4-0.4,0.9-0.4,1.5v1.5c0,0.2,0.1,0.3,0.3,0.3h0.6c0.2,0,0.3-0.1,0.3-0.3v-1.5c0-0.3,0.1-0.5,0.2-0.8 c0.2-0.3,0.6-0.5,1.1-0.5c0.5,0,0.8,0.3,1.8,0.3c1,0,1.3-0.3,1.8-0.3c0.4,0,0.8,0.2,1.1,0.5c0.2,0.2,0.2,0.5,0.2,0.8v1.5 c0,0.2,0.1,0.3,0.3,0.3h0.6c0.2,0,0.3-0.1,0.3-0.3v-1.5c0-0.5-0.2-1-0.4-1.5C11.5,11.5,10.7,11.2,9.9,11.2L9.9,11.2z"/> </svg>
+                    <span>Contatos</span>
+                  </div>
+                  <div id="tabpanel2" role="tabpanel" aria-labelledby="tab2">
+                    <div class="tabContent">
+                      <span>Telefone Principal: <strong>61 3452-0000</strong></span>
+                      <span>Telefone 2: <strong>61 3452-0000</strong></span>
+                      <span>Telefone 3: <strong>61 3452-0000</strong></span>
+                      <span>E-mail Principal: <strong>df.nomecompleto@senado.leg.br</strong></span>
+                      <span>E-mail 2: <strong>df.nomecompleto@senado.leg.br</strong></span>
+                    </div>
+                  </div>
+                  <div id="tab3" role="tab" aria-controls="tabpanel3" option>
+                    <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm193.2 152h-82.5c-9-44.4-24.1-82.2-43.2-109.1 55 18.2 100.2 57.9 125.7 109.1zM336 256c0 22.9-1.6 44.2-4.3 64H164.3c-2.7-19.8-4.3-41.1-4.3-64s1.6-44.2 4.3-64h167.4c2.7 19.8 4.3 41.1 4.3 64zM248 40c26.9 0 61.4 44.1 78.1 120H169.9C186.6 84.1 221.1 40 248 40zm-67.5 10.9c-19 26.8-34.2 64.6-43.2 109.1H54.8c25.5-51.2 70.7-90.9 125.7-109.1zM32 256c0-22.3 3.4-43.8 9.7-64h90.5c-2.6 20.5-4.2 41.8-4.2 64s1.5 43.5 4.2 64H41.7c-6.3-20.2-9.7-41.7-9.7-64zm22.8 96h82.5c9 44.4 24.1 82.2 43.2 109.1-55-18.2-100.2-57.9-125.7-109.1zM248 472c-26.9 0-61.4-44.1-78.1-120h156.2c-16.7 75.9-51.2 120-78.1 120zm67.5-10.9c19-26.8 34.2-64.6 43.2-109.1h82.5c-25.5 51.2-70.7 90.9-125.7 109.1zM363.8 320c2.6-20.5 4.2-41.8 4.2-64s-1.5-43.5-4.2-64h90.5c6.3 20.2 9.7 41.7 9.7 64s-3.4 43.8-9.7 64h-90.5z"></path></svg>
+                    <span>Redes sociais</span>
+                  </div>
+                  <div id="tabpanel3" role="tabpanel" aria-labelledby="tab3">
+                    <div class="tabContent">
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                      <button class="socialMediaBtn">
+                        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                        <span>@nomesobrenome</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div id="tab4" role="tab" aria-controls="tabpanel4" option>
+                    <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                    <span>Endereços</span>
+                  </div>
+                  <div id="tabpanel4" role="tabpanel" aria-labelledby="tab4">
+                    <div class="enderecoContainer">
+                      <div class="enderecoTitleWrapper">
+                      <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                      <span>Gabinete</span>
+                      </div>
+                      <div class="enderecoData">
+                        <!-- <span>Nome: <strong>Gabinete</strong></span> -->
+                        <span>Endereço: <strong>Senado Federal</strong></span>
+                        <span>Complemento: <strong>Anexo 2 Ala Teotônio Vilela Gabinete 11</strong></span>
+                        <span>Cidade: <strong>Brasília</strong></span>
+                        <span>UF: <strong>Distrito Federal</strong></span>
+                      </div>
+                    </div>
+                    <div class="enderecoContainer">
+                      <div class="enderecoTitleWrapper">
+                      <svg class="ContatoAbasSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86.4 0 0 86.4 0 192c0 76.8 25.6 99.2 172.8 310.4 4.8 6.4 12 9.6 19.2 9.6s14.4-3.2 19.2-9.6C358.4 291.2 384 268.8 384 192 384 86.4 297.6 0 192 0zm.01 474c-19.67-28.17-37.09-52.85-52.49-74.69C42.64 261.97 32 245.11 32 192c0-88.22 71.78-160 160-160s160 71.78 160 160c0 53.11-10.64 69.97-107.52 207.31-15.52 22.01-33.09 46.92-52.47 74.69zm89.33-339.54a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L162.54 241.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31z"></path></svg>
+                      <span>Escritório de Apoio</span>
+                      </div>
+                      <div class="enderecoData">
+                        <!-- <span>Nome: <strong>Gabinete</strong></span> -->
+                        <span>Endereço: <strong>Quadra SDS. Ed. Eldorado</strong></span>
+                        <span>Complemento: <strong>BLOCO "D", N. 60, SALA 315</strong></span>
+                        <span>Cidade: <strong>Brasília</strong></span>
+                        <span>UF: <strong>Distrito Federal</strong></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab5" role="tab" aria-controls="tabpanel5" option>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28.4 19.8"xml:space="preserve"> <path fill="#EEE2DF" d="M21.3,9.9c2.3,0,4.3-1.9,4.3-4.3s-1.9-4.3-4.3-4.3S17,3.3,17,5.7S18.9,9.9,21.3,9.9z M21.3,2.8 c1.6,0,2.8,1.3,2.8,2.8s-1.3,2.8-2.8,2.8s-2.8-1.3-2.8-2.8S19.7,2.8,21.3,2.8z M8.5,9.9c2.7,0,5-2.2,5-5s-2.2-5-5-5s-5,2.2-5,5 S5.8,9.9,8.5,9.9z M8.5,1.4C10.5,1.4,12,3,12,5s-1.6,3.5-3.5,3.5S5,6.9,5,5S6.6,1.4,8.5,1.4z M12.1,10.8c-1.5,0-1.8,0.5-3.5,0.5 S6.4,10.8,5,10.8c-1.6,0-3.2,0.7-4.1,2.1C0.3,13.7,0,14.7,0,15.7v2c0,1.2,1,2.1,2.1,2.1h12.8c1.2,0,2.1-1,2.1-2.1v-2 c0-1.1-0.3-2-0.9-2.8C15.2,11.5,13.7,10.8,12.1,10.8L12.1,10.8z M15.6,17.7c0,0.4-0.3,0.7-0.7,0.7H2.1c-0.4,0-0.7-0.3-0.7-0.7v-2 c0-0.7,0.2-1.4,0.6-2.1c0.6-0.9,1.7-1.5,2.9-1.5c1.2,0,1.6,0.5,3.6,0.5s2.3-0.5,3.5-0.5s2.3,0.5,2.9,1.5c0.4,0.6,0.6,1.3,0.6,2.1 L15.6,17.7L15.6,17.7z M27.6,12.6c-0.8-1.1-2.1-1.7-3.4-1.7c-1.2,0-1.5,0.4-3,0.4s-1.7-0.4-3-0.4c-0.6,0-1.2,0.1-1.7,0.4 c0.7,0.7,0.8,1,0.9,1.2c0.3-0.1,0.5-0.1,0.8-0.1c1,0,1.3,0.4,3,0.4s2-0.4,3-0.4c0.9,0,1.8,0.4,2.2,1.1c0.3,0.5,0.5,1,0.5,1.6v1.6 c0,0.2-0.2,0.4-0.4,0.4h-8.2c0,0.8,0,1-0.1,1.4h8.2c1,0,1.8-0.8,1.8-1.8V15C28.4,14.1,28.1,13.3,27.6,12.6z"/> </svg>
+                    <span>conexões</span>
+                  </div>
+                  <div id="tabpanel5" role="tabpanel" aria-labelledby="tab5">
+                    <div class="conexoesWrapper">
+                      <div class="conexaoBlock">
+                        <span>ASSESSOR DE IMPRENSA</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>SECRETÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>ESTAGIÁRIO</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                      <div class="conexaoBlock">
+                        <span>PRIMEIRO SUPLENTE</span>
+                        <button class="desbloquearConexaoBtn">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 30" xml:space="preserve"><path fill="#FFFFFF" d="M19.7,15H5.6V9.4c0-4.1,1.5-7.5,5.6-7.5s5.6,3.4,5.6,7.5v1.2c0,0.4,0.3,0.7,0.7,0.7H18 c0.4,0,0.7-0.3,0.7-0.7V9.5c0-5.2-2.3-9.4-7.5-9.5C6.1,0,3.7,4.2,3.7,9.4V15H2.8C1.3,15,0,16.3,0,17.8v9.4C0,28.7,1.3,30,2.8,30 h16.9c1.6,0,2.8-1.3,2.8-2.8v-9.4C22.5,16.3,21.2,15,19.7,15z M20.6,27.2c0,0.5-0.4,0.9-0.9,0.9H2.8c-0.5,0-0.9-0.4-0.9-0.9v-9.4 c0-0.5,0.4-0.9,0.9-0.9h16.9c0.5,0,0.9,0.4,0.9,0.9V27.2z M11.2,25.3c-0.5,0-0.9-0.4-0.9-0.9v-3.7c0-0.5,0.4-0.9,0.9-0.9 c0.5,0,0.9,0.4,0.9,0.9v3.7C12.2,24.9,11.8,25.3,11.2,25.3z"></path></svg>
+                          <span>Desbloquear Conexão</span>
+                        </button>
+                        <div class="conexaoContent">
+                          <span class="conexaoData">Nome: <strong>Nome Completo</strong></span>
+                          <span class="conexaoData">Telefone Principal: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">Telefone 2: <strong>61 1234-0000</strong></span>
+                          <span class="conexaoData">e-mail principal: <strong>user@user.com.br</strong></span>
+                          <span class="conexaoData">e-mail 2: <strong>user@user.com.br</strong></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </amp-selector>
+              </div>
+            </div>
+          </div>
+          <!-- ################################################################################# -->
+          <!-- bloco contato gov################################################################ -->
+          <!-- ################################################################################# -->
+
+
+
+
+
+        </div>
+      </div>
+  </div>
+
+
+
+</div>
+
+
+
+<script>
+  document.querySelector('.desbloquearBtn').addEventListener('click', function() {
+    console.log('btn clicado');
+    this.parentNode.style.overflow = 'auto';
+    this.parentNode.style.height = 'auto';
+    this.style.display = 'none';
+    document.querySelector('.expiraText').style.display = 'block';
+    document.querySelector('.profileImgWrapper').style.visibility = 'visible';
+  });
+
+  document.querySelector('.desbloquearConexaoBtn').addEventListener('click', function() {
+    console.log('btn clicado');
+    document.querySelector('.conexaoContent').style.display = 'flex';
+    this.style.display = 'none';
+  })
+</script>
+
+
+
+  </body>
+</html>
+
+
+<!-- {
+  "keyframes": [
+    {"opacity": 1, "transform": "scale(1)"},
+    {"opacity": 0, "transform": "scale(2)"}
+  ]
+} -->
